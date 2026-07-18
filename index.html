@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>〔ショップ名〕｜生体サンゴ専門オンラインストア</title>
+<meta name="description" content="状態管理を徹底した生体サンゴの専門店〔ショップ名〕。ハードコーラル・ソフトコーラル・イソギンチャクを、初心者にもわかりやすい情報とともにお届けします。">
+<style>
+  :root{
+    --navy:#0b3350;
+    --deep:#0e4a6e;
+    --sea:#1c7ea3;
+    --sea-light:#5fb8d6;
+    --mist:#eef6f8;
+    --white:#ffffff;
+    --coral:#ff7a59;
+    --coral-dark:#e8613f;
+    --text:#1e2d33;
+    --text-soft:#4d6470;
+    --border:#d8e6ea;
+    --radius:14px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3,h4{margin:0;line-height:1.4;}
+  p{margin:0;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 32px;}
+  .section-eyebrow{
+    display:inline-block;
+    color:var(--sea);
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:.12em;
+    margin-bottom:8px;
+  }
+  .section-head h2{font-size:1.5rem;color:var(--navy);}
+  .section-head p{margin-top:12px;color:var(--text-soft);font-size:.95rem;}
+  .bg-mist{background:var(--mist);}
+
+  /* Header */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:1120px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .logo{font-weight:700;color:var(--navy);font-size:1.05rem;text-decoration:none;letter-spacing:.02em;}
+  .site-nav{display:none;gap:22px;font-size:.88rem;font-weight:600;color:var(--text-soft);}
+  .site-nav a{text-decoration:none;}
+  .site-nav a:hover{color:var(--sea);}
+  .header-cta{
+    display:none;
+    background:var(--coral);
+    color:var(--white);
+    padding:9px 18px;
+    border-radius:100px;
+    font-size:.85rem;
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--coral-dark);}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 28px;
+    border-radius:100px;
+    font-weight:700;
+    font-size:.98rem;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--coral);color:var(--white);}
+  .btn-primary:hover{background:var(--coral-dark);}
+  .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .btn-navy{background:var(--navy);color:var(--white);}
+  .btn-navy:hover{background:var(--deep);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:560px;
+    display:flex;align-items:flex-end;
+    color:var(--white);
+    background-image:
+      linear-gradient(180deg, rgba(9,33,51,.55) 0%, rgba(8,28,45,.72) 55%, rgba(6,22,36,.92) 100%),
+      url("https://images.unsplash.com/photo-1708649290066-5f617003b93f?fm=jpg&q=80&w=1600&auto=format&fit=crop");
+    /* 実際の店舗撮影のヒーロー写真に差し替え可能 */
+    background-size:cover;
+    background-position:center;
+  }
+  .hero-inner{padding:120px 0 56px;}
+  .hero-eyebrow{
+    display:inline-block;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.4);
+    padding:6px 14px;
+    border-radius:100px;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    margin-bottom:18px;
+  }
+  .hero h1{font-size:1.9rem;max-width:620px;text-shadow:0 2px 12px rgba(0,0,0,.35);}
+  .hero p.lead{margin-top:18px;max-width:520px;font-size:1rem;color:rgba(255,255,255,.92);}
+  .hero .cta-row{justify-content:flex-start;}
+
+  /* Reasons */
+  .reason-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .reason-card{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:26px 22px;
+  }
+  .reason-icon{
+    width:48px;height:48px;border-radius:12px;
+    background:var(--mist);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;margin-bottom:14px;
+  }
+  .reason-card h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
+  .reason-card p{font-size:.9rem;color:var(--text-soft);}
+
+  /* Category tabs / headings */
+  .category-block{margin-bottom:40px;}
+  .category-title{
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:18px;
+  }
+  .category-title h3{font-size:1.15rem;color:var(--navy);}
+  .category-title .count{font-size:.8rem;color:var(--text-soft);}
+  .category-title::after{content:"";flex:1;height:1px;background:var(--border);}
+
+  .product-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .product-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--white);
+    display:flex;flex-direction:column;
+  }
+  .product-photo{
+    position:relative;
+    aspect-ratio:4/3;
+    background-size:cover;
+    background-position:center;
+    background-color:var(--mist);
+  }
+  .badge{
+    position:absolute;top:10px;
+    font-size:.7rem;font-weight:700;
+    padding:5px 10px;border-radius:100px;
+    letter-spacing:.02em;
+  }
+  .badge-stock{left:10px;background:var(--white);color:var(--sea);box-shadow:0 2px 6px rgba(0,0,0,.15);}
+  .badge-stock.low{color:var(--coral-dark);}
+  .badge-stock.ask{color:var(--text-soft);}
+  .badge-category{right:10px;background:rgba(11,51,80,.82);color:var(--white);}
+  .product-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .product-body h4{font-size:1.05rem;color:var(--navy);}
+  .product-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.76rem;color:var(--text-soft);}
+  .product-meta span{background:var(--mist);padding:4px 9px;border-radius:6px;}
+  .product-comment{font-size:.86rem;color:var(--text-soft);flex:1;}
+  .product-price{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-top:4px;padding-top:12px;border-top:1px dashed var(--border);
+  }
+  .product-price .price{font-size:1.2rem;font-weight:700;color:var(--navy);}
+  .product-price .price small{font-size:.7rem;font-weight:400;color:var(--text-soft);}
+
+  /* News */
+  .news-list{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white);}
+  .news-item{
+    display:flex;gap:16px;padding:16px 20px;
+    border-bottom:1px solid var(--border);
+    font-size:.9rem;
+  }
+  .news-item:last-child{border-bottom:none;}
+  .news-date{color:var(--sea);font-weight:700;white-space:nowrap;font-size:.82rem;}
+  .news-tag{
+    display:inline-block;font-size:.68rem;font-weight:700;color:var(--white);
+    background:var(--sea);padding:2px 8px;border-radius:5px;margin-right:8px;
+  }
+
+  /* Info cards (shipping / safety / support) */
+  .info-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .info-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .info-card h3{color:var(--navy);font-size:1.02rem;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  .info-card ul{margin-top:10px;}
+  .info-card li{position:relative;padding-left:18px;font-size:.88rem;color:var(--text-soft);margin-bottom:8px;}
+  .info-card li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--sea-light);}
+
+  .badge-cites{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--mist);border:1px solid var(--border);
+    padding:10px 16px;border-radius:100px;font-size:.82rem;color:var(--navy);font-weight:700;
+    margin-bottom:16px;
+  }
+
+  /* Reviews */
+  .review-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .review-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+  .stars{color:var(--coral);font-size:.95rem;letter-spacing:2px;margin-bottom:10px;}
+  .review-card p.body{font-size:.9rem;color:var(--text-soft);}
+  .review-name{margin-top:14px;font-size:.8rem;color:var(--text-soft);font-weight:700;}
+
+  /* FAQ */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+  details{
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  summary{
+    cursor:pointer;font-weight:700;color:var(--navy);font-size:.95rem;
+    list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:1.3rem;color:var(--sea);font-weight:400;flex-shrink:0;}
+  details[open] summary::after{content:"−";}
+  details p{margin-top:12px;font-size:.88rem;color:var(--text-soft);}
+
+  /* Contact form */
+  .contact-form{
+    max-width:640px;margin:0 auto;
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px 22px;
+  }
+  .form-note{font-size:.8rem;color:var(--text-soft);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+  .form-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:18px;}
+  .form-group{display:flex;flex-direction:column;gap:6px;}
+  .form-group label{
+    font-size:.85rem;font-weight:700;color:var(--navy);
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  }
+  .badge-required,.badge-optional{
+    font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.02em;
+  }
+  .badge-required{background:var(--coral);color:var(--white);}
+  .badge-optional{background:var(--mist);color:var(--text-soft);border:1px solid var(--border);}
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form input[type="tel"],
+  .contact-form select,
+  .contact-form textarea{
+    font-family:inherit;font-size:.92rem;color:var(--text);
+    padding:11px 14px;border:1px solid var(--border);border-radius:8px;
+    background:var(--white);width:100%;
+  }
+  .contact-form textarea{min-height:140px;resize:vertical;}
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus{
+    outline:2px solid var(--sea-light);outline-offset:1px;border-color:var(--sea);
+  }
+  .contact-form input:invalid:not(:placeholder-shown){border-color:var(--coral);}
+  .checkbox-row{
+    display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--text-soft);margin-bottom:22px;
+  }
+  .checkbox-row input{width:auto;margin-top:4px;flex-shrink:0;}
+  .form-submit{text-align:center;}
+  .form-submit .btn{width:100%;}
+
+  /* Store banner */
+  .store-banner{
+    background:linear-gradient(135deg,var(--navy),var(--deep));
+    color:var(--white);
+    border-radius:var(--radius);
+    padding:40px 28px;
+    text-align:center;
+  }
+  .store-banner h2{font-size:1.4rem;}
+  .store-banner p{margin-top:12px;color:rgba(255,255,255,.85);font-size:.92rem;}
+
+  /* Footer */
+  footer{background:var(--navy);color:rgba(255,255,255,.85);padding:48px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:32px;}
+  .footer-brand h3{color:var(--white);font-size:1.15rem;}
+  .footer-brand p{margin-top:10px;font-size:.85rem;color:rgba(255,255,255,.65);}
+  .footer-links h4{color:var(--white);font-size:.85rem;margin-bottom:12px;letter-spacing:.05em;}
+  .footer-links li{margin-bottom:8px;font-size:.86rem;}
+  .footer-links a{text-decoration:none;color:rgba(255,255,255,.75);}
+  .footer-links a:hover{color:var(--sea-light);}
+  .footer-cta{display:flex;flex-direction:column;gap:10px;}
+  .btn-insta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;border:1px solid rgba(255,255,255,.4);
+    color:var(--white);padding:10px 16px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;
+  }
+  .btn-insta:hover{background:rgba(255,255,255,.1);}
+  .btn-official{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;color:#ffffff;
+    border:1px solid transparent;
+  }
+  .btn-official svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-line{background:#06C755;}
+  .btn-line:hover{background:#05a648;}
+  .btn-instagram{background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);}
+  .btn-instagram:hover{filter:brightness(1.08);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);
+    padding-top:20px;
+    font-size:.78rem;
+    color:rgba(255,255,255,.55);
+    display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;
+  }
+  .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:underline;}
+
+  @media (min-width:640px){
+    .reason-grid{grid-template-columns:repeat(2,1fr);}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .info-grid{grid-template-columns:repeat(2,1fr);}
+    .review-grid{grid-template-columns:repeat(3,1fr);}
+    .hero h1{font-size:2.3rem;}
+    .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+    .form-grid.two{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .site-nav{display:flex;}
+    .header-cta{display:inline-flex;}
+    .reason-grid{grid-template-columns:repeat(4,1fr);}
+    .product-grid{grid-template-columns:repeat(3,1fr);}
+    .section-head h2{font-size:1.8rem;}
+    .hero-inner{padding:170px 0 80px;}
+    .hero h1{font-size:2.8rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">〔ショップ名〕</a>
+    <nav class="site-nav">
+      <a href="#reasons">選ばれる理由</a>
+      <a href="#products">入荷個体一覧</a>
+      <a href="#support">飼育サポート</a>
+      <a href="#faq">よくあるご質問</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="store.html">実店舗のご案内</a>
+    </nav>
+    <a class="header-cta" href="#products">入荷中の個体を見る</a>
+  </div>
+</header>
+
+<main>
+  <!-- 1. ヒーロー -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="hero-eyebrow">生体サンゴ専門オンラインストア</span>
+      <h1>その一群れの美しさに、<br>確かな管理の裏付けを。</h1>
+      <p class="lead">〔状態管理を徹底した、初心者にもやさしいサンゴ専門店〕。入荷後の個体を一つひとつ観察し、状態が落ち着いたものだけをお届けしています。</p>
+      <div class="cta-row">
+        <a href="#products" class="btn btn-primary">入荷中の個体を見る</a>
+        <a href="#reasons" class="btn btn-outline">選ばれる理由を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 選ばれる理由 -->
+  <section id="reasons" class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">WHY US</span>
+      <h2>〔ショップ名〕が選ばれる理由</h2>
+      <p>サンゴは環境の変化に敏感な生き物です。だからこそ、入荷から発送までのすべての工程に理由を持たせています。</p>
+    </div>
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="reason-icon">🔎</div>
+        <h3>個体ごとの状態管理</h3>
+        <p>入荷した個体は水槽ごとに管理し、ポリプの開き具合や色揚がりを日々チェックしてから販売に出しています。</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon">🚢</div>
+        <h3>正規ルート仕入れ</h3>
+        <p>取引先を限定し、採取国・流通経路が明確な個体のみを仕入れています。出どころが曖昧な個体は扱いません。</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon">📦</div>
+        <h3>丁寧な梱包</h3>
+        <p>水温・水質の変化を抑える梱包を個体の種類に合わせて調整し、輸送によるダメージを最小限にしています。</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon">💬</div>
+        <h3>初心者サポート</h3>
+        <p>「この個体は自分の水槽で飼えるか」というご相談を歓迎します。購入前後を問わずお気軽にご連絡ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 個体紹介 -->
+  <section id="products" class="bg-mist">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">CORAL LIST</span>
+        <h2>入荷中の個体一覧</h2>
+        <p>状態は日々変化します。掲載内容は入荷時点の目安としてご参照のうえ、詳細はお問い合わせください。</p>
+      </div>
+
+      <div class="category-block">
+        <div class="category-title">
+          <h3>ハードコーラル</h3>
+          <span class="count">全5点</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1573062940355-8cd2fe0c99a4?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">ハードコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>ミドリイシ〔グリーン〕</h4>
+              <div class="product-meta"><span>サイズ目安 約6cm</span><span>飼育難易度 上級</span></div>
+              <p class="product-comment">枝先まで色が均一に伸びており、輸送によるポリプの萎縮も見られません。強めの光量と水流を確保できる水槽向けです。</p>
+              <div class="product-price"><span class="price">¥8,800<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1650280175181-d17c360bef7c?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">ハードコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>コモンサンゴ〔ミックスカラー〕</h4>
+              <div class="product-meta"><span>サイズ目安 約8cm</span><span>飼育難易度 中級</span></div>
+              <p class="product-comment">丈夫で扱いやすく、ハードコーラルを初めて迎える方にも試しやすい種類です。表面の発色も落ち着いています。</p>
+              <div class="product-price"><span class="price">¥5,500<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1762336219274-3daf871ae18c?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock low">残りわずか</span>
+              <span class="badge badge-category">ハードコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>ノウサンゴ〔ブレインタイプ〕</h4>
+              <div class="product-meta"><span>サイズ目安 約10cm</span><span>飼育難易度 初級</span></div>
+              <p class="product-comment">脳状の模様がはっきりと出た個体です。水流を強く当てすぎない環境でゆったりと育てられます。</p>
+              <div class="product-price"><span class="price">¥6,600<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1739608400060-0c92ded25244?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">ハードコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>ハナサンゴ〔パープルティップ〕</h4>
+              <div class="product-meta"><span>サイズ目安 約7cm</span><span>飼育難易度 中級</span></div>
+              <p class="product-comment">触手の先端に色が乗った個体で、給餌にもよく反応します。他の個体と間隔を空けて設置してください。</p>
+              <div class="product-price"><span class="price">¥7,700<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1632456417636-8425fb148522?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock ask">要相談</span>
+              <span class="badge badge-category">ハードコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>トゲキクメイシ〔レッド〕</h4>
+              <div class="product-meta"><span>サイズ目安 約9cm</span><span>飼育難易度 中級</span></div>
+              <p class="product-comment">群体としての大きさがあるため、設置場所や水槽サイズについて事前にご相談いただくことをおすすめします。</p>
+              <div class="product-price"><span class="price">¥12,100<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="category-block">
+        <div class="category-title">
+          <h3>ソフトコーラル</h3>
+          <span class="count">全3点</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1613117799054-66cacc1914c3?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">ソフトコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>ウミキノコ〔スタンダード〕</h4>
+              <div class="product-meta"><span>サイズ目安 約8cm</span><span>飼育難易度 初級</span></div>
+              <p class="product-comment">環境への順応が早く、ソフトコーラル入門にも向いています。表面の触手が全体的にしっかり展開しています。</p>
+              <div class="product-price"><span class="price">¥4,400<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1561990488-0e16d60eaa79?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">ソフトコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>トサカ〔ブルー〕</h4>
+              <div class="product-meta"><span>サイズ目安 約10cm</span><span>飼育難易度 初級</span></div>
+              <p class="product-comment">やわらかな質感で水流に揺れる姿が楽しめる個体です。強すぎない照明環境でも色を保ちやすいタイプです。</p>
+              <div class="product-price"><span class="price">¥5,280<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1773221937975-940c37f092d0?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock low">残りわずか</span>
+              <span class="badge badge-category">ソフトコーラル</span>
+            </div>
+            <div class="product-body">
+              <h4>マメスナギンチャク〔ミックス〕</h4>
+              <div class="product-meta"><span>サイズ目安 群体幅約6cm</span><span>飼育難易度 初級</span></div>
+              <p class="product-comment">複数の色が混在した群体です。増殖のスピードが早いため、レイアウトの余白を考えて設置するのがおすすめです。</p>
+              <div class="product-price"><span class="price">¥3,300<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="category-block">
+        <div class="category-title">
+          <h3>イソギンチャク</h3>
+          <span class="count">全5点</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1712672117537-0ab4f26d1e7c?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">イソギンチャク</span>
+            </div>
+            <div class="product-body">
+              <h4>サンゴイソギンチャク</h4>
+              <div class="product-meta"><span>サイズ目安 約12cm</span><span>飼育難易度 中級</span></div>
+              <p class="product-comment">クマノミとの相性がよく、触手の先端が丸く膨らむ特徴的な個体です。強い光と安定した水質を好みます。</p>
+              <div class="product-price"><span class="price">¥9,900<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1738181133744-ab06901eaf1f?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">イソギンチャク</span>
+            </div>
+            <div class="product-body">
+              <h4>ハタゴイソギンチャク</h4>
+              <div class="product-meta"><span>サイズ目安 約15cm</span><span>飼育難易度 上級</span></div>
+              <p class="product-comment">足盤がしっかりと張り、移動が落ち着いている状態です。水槽内で身を隠せる岩組みを用意してあげてください。</p>
+              <div class="product-price"><span class="price">¥13,200<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1696406523157-946fd855c77e?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock ask">要相談</span>
+              <span class="badge badge-category">イソギンチャク</span>
+            </div>
+            <div class="product-body">
+              <h4>シライトイソギンチャク</h4>
+              <div class="product-meta"><span>サイズ目安 約14cm</span><span>飼育難易度 上級</span></div>
+              <p class="product-comment">触手が細くしなやかに広がる種類です。水槽の立ち上げ期間や照明機材について事前確認をお願いしています。</p>
+              <div class="product-price"><span class="price">¥14,300<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1644913054796-db03fc0e2d16?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock">入荷中</span>
+              <span class="badge badge-category">イソギンチャク</span>
+            </div>
+            <div class="product-body">
+              <h4>イボハタゴイソギンチャク</h4>
+              <div class="product-meta"><span>サイズ目安 約13cm</span><span>飼育難易度 中級</span></div>
+              <p class="product-comment">表面のイボ状の突起がはっきり確認できる健康な個体です。強い光量下で色付きが良くなる傾向があります。</p>
+              <div class="product-price"><span class="price">¥10,780<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1550457235-f45f6a6e05ce?fm=jpg&q=75&w=800&auto=format&fit=crop');">
+              <!-- 実際の個体写真に差し替え可能 -->
+              <span class="badge badge-stock low">残りわずか</span>
+              <span class="badge badge-category">イソギンチャク</span>
+            </div>
+            <div class="product-body">
+              <h4>センジュイソギンチャク</h4>
+              <div class="product-meta"><span>サイズ目安 約16cm</span><span>飼育難易度 上級</span></div>
+              <p class="product-comment">触手数が多く見応えのある大型個体です。広めの水槽と十分な水量を確保できる方向けにご案内しています。</p>
+              <div class="product-price"><span class="price">¥16,500<small> / 税込</small></span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a href="#faq" class="btn btn-navy">購入前によくある質問を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 入荷速報 -->
+  <section id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">NEWS</span>
+        <h2>入荷速報・新着情報</h2>
+        <p>個体は毎週入荷しています。売り切れの場合は次回入荷の目安をお問い合わせください。</p>
+      </div>
+      <div class="news-list">
+        <div class="news-item"><span class="news-date">2026.07.18</span><div><span class="news-tag">入荷</span>ハードコーラル・イソギンチャク計8点を追加しました。</div></div>
+        <div class="news-item"><span class="news-date">2026.07.11</span><div><span class="news-tag">お知らせ</span>夏季の高温期に伴い、保冷剤入り梱包の対応地域を拡大しました。</div></div>
+        <div class="news-item"><span class="news-date">2026.07.04</span><div><span class="news-tag">入荷</span>ソフトコーラルの新着個体を掲載しました。人気種は早期に品切れとなる場合があります。</div></div>
+        <div class="news-item"><span class="news-date">2026.06.27</span><div><span class="news-tag">お知らせ</span>公式LINEでの入荷連絡サービスを開始しました。ご希望の方はフッターよりご登録ください。</div></div>
+      </div>
+      <div class="cta-row">
+        <a href="#products" class="btn btn-primary">最新の入荷個体を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 配送・梱包の安心 -->
+  <section class="bg-mist">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">SHIPPING</span>
+        <h2>配送・梱包の安心</h2>
+        <p>サンゴにとって輸送は大きな環境変化です。到着までの負担を減らすための梱包をおこなっています。</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>🌡️ 保温・保冷梱包</h3>
+          <p>季節や気温に応じて保温材・保冷剤を使い分け、梱包内の水温変化を抑えます。</p>
+          <ul>
+            <li>〔全国配送、北海道・沖縄は保温梱包オプションあり〕</li>
+            <li>気温が高い日・低い日は自動的に梱包資材を調整します</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>🗺️ 地域別の配送対応</h3>
+          <p>お届け先の地域・気候に合わせて発送タイミングを調整しています。</p>
+          <ul>
+            <li>離島など一部地域は配送日数が異なる場合があります</li>
+            <li>詳しい配送状況はメールまたは公式LINEでお問い合わせください</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>📥 到着後のお願い</h3>
+          <p>個体をすぐに水槽へ移さず、水合わせの時間を取ってください。</p>
+          <ul>
+            <li>袋のまま水槽に浮かべ、水温を合わせてから開封してください</li>
+            <li>点滴法などでゆっくり水質を合わせると負担が少なくなります</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>📞 到着後のトラブル時</h3>
+          <p>輸送中のダメージが疑われる場合は、開封後すぐにご連絡ください。</p>
+          <ul>
+            <li>到着から24時間以内のご連絡をお願いしています</li>
+            <li>写真を添えてご連絡いただくと状況確認がスムーズです</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 安心の取り組み -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">TRUST</span>
+        <h2>安心してお迎えいただくための取り組み</h2>
+      </div>
+      <div style="text-align:center;">
+        <span class="badge-cites">🛡️ ワシントン条約（CITES）準拠</span>
+      </div>
+      <p style="max-width:680px;margin:0 auto;text-align:center;color:var(--text-soft);font-size:.92rem;">
+        〔ショップ名〕で取り扱う個体は、ワシントン条約（CITES）に基づく正規の輸出入手続きを経たものに限定しています。
+        仕入れ先は採取国・流通経路が確認できる取引先のみとし、出どころの不明な個体は取り扱いません。
+        書類の保管・管理も徹底し、お客様に安心してお迎えいただける体制を整えています。
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. 飼育サポート -->
+  <section id="support" class="bg-mist">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">SUPPORT</span>
+        <h2>飼育サポート／初心者向け情報</h2>
+        <p>サンゴ飼育で迷いやすいポイントを簡単にまとめました。詳しい相談はお気軽にご連絡ください。</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>💡 コツ1：水質は急に変えない</h3>
+          <p>水換えや添加剤の投入は少量ずつ行い、数値を急激に変化させないようにしましょう。</p>
+        </div>
+        <div class="info-card">
+          <h3>💡 コツ2：光量は個体に合わせる</h3>
+          <p>種類によって好む光の強さが異なります。設置直後は弱めの光量から慣らすと負担が少なくなります。</p>
+        </div>
+        <div class="info-card">
+          <h3>💡 コツ3：他の個体との距離を保つ</h3>
+          <p>種類によっては触手で隣接する個体を攻撃することがあるため、十分な間隔を空けて設置してください。</p>
+        </div>
+        <div class="info-card">
+          <h3>📮 購入後のご相談窓口</h3>
+          <p>「うまく色が出ない」「隣の個体と接触してしまった」など、購入後のご相談もメール・公式LINEで承っています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. お客様の声 -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">VOICE</span>
+        <h2>お客様の声</h2>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="body">〔届いた個体はポリプがしっかり開いていて、写真の状態そのままでした。水合わせの説明も分かりやすかったです。〕</p>
+          <p class="review-name">〔40代・水槽歴3年〕</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="body">〔初めてのサンゴ購入でしたが、飼育難易度の表記が参考になり、無理なく選べました。梱包も丁寧でした。〕</p>
+          <p class="review-name">〔30代・水槽歴半年〕</p>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p class="body">〔到着後に少し不安な点があり連絡したところ、すぐに対応していただけて安心しました。〕</p>
+          <p class="review-name">〔20代・水槽歴1年〕</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section id="faq" class="bg-mist">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">FAQ</span>
+        <h2>よくあるご質問</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>配送にはどのくらい日数がかかりますか？</summary>
+          <p>ご注文確認後、通常2〜4日以内の発送となります。地域や天候により前後する場合がありますので、お急ぎの際は事前にご相談ください。</p>
+        </details>
+        <details>
+          <summary>到着時に個体の状態が悪かった場合はどうなりますか？</summary>
+          <p>到着から24時間以内にご連絡いただいた場合に限り、状態を確認のうえ個別に対応いたします。開封時の写真をお送りいただくとスムーズです。</p>
+        </details>
+        <details>
+          <summary>支払い方法は何が使えますか？</summary>
+          <p>クレジットカード、銀行振込、代金引換に対応しています。決済方法の詳細はご注文手続きの画面でご確認いただけます。</p>
+        </details>
+        <details>
+          <summary>飼育経験がなくても購入できますか？</summary>
+          <p>もちろん可能です。個体ごとの飼育難易度を目安として掲載しているほか、購入前後のご相談も承っておりますのでお気軽にお問い合わせください。</p>
+        </details>
+        <details>
+          <summary>実店舗でも同じ個体を見られますか？</summary>
+          <p>オンライン掲載分と実店舗の在庫は一部異なります。実店舗の詳細は店舗案内ページをご覧ください。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- メールでのお問い合わせフォーム -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">CONTACT</span>
+        <h2>メールでのお問い合わせ</h2>
+        <p>個体の状態やご購入前のご相談など、下記フォームよりお気軽にお問い合わせください。通常2営業日以内にご返信しております。</p>
+      </div>
+      <form class="contact-form" action="〔フォーム送信先エンドポイントURL〕" method="post">
+        <!-- 実際の送信処理は、フォーム送信サービスや問い合わせ管理システムのエンドポイントに差し替えてください -->
+        <p class="form-note"><span class="badge-required">必須</span>の項目は入力必須です。</p>
+
+        <div class="form-grid two">
+          <div class="form-group">
+            <label for="c-name">お名前<span class="badge-required">必須</span></label>
+            <input type="text" id="c-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="c-kana">フリガナ<span class="badge-optional">任意</span></label>
+            <input type="text" id="c-kana" name="kana" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-grid two">
+          <div class="form-group">
+            <label for="c-email">メールアドレス<span class="badge-required">必須</span></label>
+            <input type="email" id="c-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label for="c-tel">電話番号<span class="badge-optional">任意</span></label>
+            <input type="tel" id="c-tel" name="tel" autocomplete="tel" pattern="[0-9\-]*" placeholder="例：090-0000-0000">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="c-type">お問い合わせ種別<span class="badge-required">必須</span></label>
+            <select id="c-type" name="inquiry_type" required>
+              <option value="" selected disabled>選択してください</option>
+              <option value="product">入荷個体について</option>
+              <option value="shipping">配送・梱包について</option>
+              <option value="store">実店舗について</option>
+              <option value="other">その他のご相談</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="c-message">お問い合わせ内容<span class="badge-required">必須</span></label>
+            <textarea id="c-message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+          </div>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="c-privacy" name="privacy" required>
+          <label for="c-privacy"><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>の内容に同意のうえ、送信します。<span class="badge-required">必須</span></label>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">この内容で送信する</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 10. 実店舗ご案内バナー -->
+  <section>
+    <div class="wrap">
+      <div class="store-banner">
+        <h2>実店舗もございます</h2>
+        <p>実際の個体の色や動きをご自身の目でご覧いただけます。水槽のご相談もその場で承っています。</p>
+        <div class="cta-row">
+          <a href="store.html" class="btn btn-primary">店舗案内を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 11. フッター -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>〔ショップ名〕</h3>
+        <p>〔状態管理を徹底した、初心者にもやさしいサンゴ専門店〕として、生体サンゴをお届けしています。</p>
+      </div>
+      <div class="footer-links">
+        <h4>サイトマップ</h4>
+        <ul>
+          <li><a href="#products">入荷個体一覧</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="store.html">実店舗のご案内</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <h4 style="color:#fff;font-size:.85rem;margin-bottom:4px;">お問い合わせ</h4>
+        <a class="btn-insta" href="#contact">✉️ メールで問い合わせる</a>
+        <a class="btn-official btn-line" href="https://line.me/R/ti/p/%E3%80%94%E5%85%AC%E5%BC%8FLINE%E3%81%AEID%E3%80%95">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 3.2 2.02 6 5.02 7.55-.22.8-.8 2.9-.92 3.35-.15.55.2.55.42.4.17-.12 2.7-1.83 3.8-2.58.54.08 1.1.12 1.68.12 5.52 0 10-3.94 10-8.84C22 5.94 17.52 2 12 2z"/></svg>
+          LINEで友だち追加
+        </a>
+        <a class="btn-official btn-instagram" href="https://www.instagram.com/〔ショップ名のInstagramID〕/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          Instagramをフォローする
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 〔ショップ名〕</span>
+      <span><a href="tokushoho.html">特定商取引法に基づく表記</a></span>
+      <span><a href="privacy.html">プライバシーポリシー</a></span>
+      <span><a href="store.html">実店舗のご案内</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

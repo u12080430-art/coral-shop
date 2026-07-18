@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>店舗のご案内｜〔ショップ名〕</title>
+<meta name="description" content="〔ショップ名〕の実店舗のご案内。所在地・営業時間・ご来店にあたっての注意事項をまとめています。">
+<style>
+  :root{
+    --navy:#0b3350;
+    --deep:#0e4a6e;
+    --sea:#1c7ea3;
+    --sea-light:#5fb8d6;
+    --mist:#eef6f8;
+    --white:#ffffff;
+    --coral:#ff7a59;
+    --coral-dark:#e8613f;
+    --text:#1e2d33;
+    --text-soft:#4d6470;
+    --border:#d8e6ea;
+    --radius:14px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3,h4{margin:0;line-height:1.4;}
+  p{margin:0;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  .section-head{max-width:640px;margin:0 auto 32px;text-align:center;}
+  .section-eyebrow{
+    display:inline-block;color:var(--sea);font-weight:700;
+    font-size:.8rem;letter-spacing:.12em;margin-bottom:8px;
+  }
+  .section-head h2{font-size:1.5rem;color:var(--navy);}
+  .section-head p{margin-top:12px;color:var(--text-soft);font-size:.95rem;}
+  .bg-mist{background:var(--mist);}
+
+  /* Header (共通デザイン) */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:1120px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .logo{font-weight:700;color:var(--navy);font-size:1.05rem;text-decoration:none;letter-spacing:.02em;}
+  .site-nav{display:none;gap:22px;font-size:.88rem;font-weight:600;color:var(--text-soft);}
+  .site-nav a{text-decoration:none;}
+  .site-nav a:hover{color:var(--sea);}
+  .header-cta{
+    display:none;background:var(--coral);color:var(--white);
+    padding:9px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--coral-dark);}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 28px;border-radius:100px;font-weight:700;font-size:.98rem;
+    text-decoration:none;border:2px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--coral);color:var(--white);}
+  .btn-primary:hover{background:var(--coral-dark);}
+  .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px;}
+
+  /* Page hero */
+  .page-hero{
+    position:relative;
+    min-height:320px;
+    display:flex;align-items:flex-end;
+    color:var(--white);
+    background-image:
+      linear-gradient(180deg, rgba(9,33,51,.55) 0%, rgba(8,28,45,.78) 60%, rgba(6,22,36,.92) 100%),
+      url("https://images.unsplash.com/photo-1613117799054-66cacc1914c3?fm=jpg&q=80&w=1600&auto=format&fit=crop");
+    /* 実際の店舗内観・水槽写真に差し替え可能 */
+    background-size:cover;
+    background-position:center;
+  }
+  .page-hero-inner{padding:90px 0 40px;}
+  .breadcrumb{font-size:.8rem;color:rgba(255,255,255,.75);margin-bottom:14px;}
+  .breadcrumb a{text-decoration:underline;color:rgba(255,255,255,.9);}
+  .page-hero h1{font-size:1.8rem;max-width:560px;text-shadow:0 2px 12px rgba(0,0,0,.35);}
+  .page-hero p.lead{margin-top:16px;max-width:520px;font-size:.95rem;color:rgba(255,255,255,.92);}
+
+  /* Info table */
+  .info-table-wrap{
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  table.info-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+  table.info-table th,table.info-table td{
+    text-align:left;padding:14px 18px;border-bottom:1px solid var(--border);vertical-align:top;
+  }
+  table.info-table tr:last-child th, table.info-table tr:last-child td{border-bottom:none;}
+  table.info-table th{
+    width:34%;color:var(--navy);font-weight:700;background:var(--mist);
+  }
+  table.info-table td{color:var(--text-soft);}
+
+  .map-placeholder{
+    aspect-ratio:16/9;
+    background:repeating-linear-gradient(45deg, var(--mist), var(--mist) 12px, #e3eef1 12px, #e3eef1 24px);
+    border:1px dashed var(--border);
+    border-radius:var(--radius);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text-soft);font-size:.9rem;font-weight:700;
+    margin-bottom:20px;
+    text-align:center;
+    padding:20px;
+  }
+
+  .two-col{display:grid;grid-template-columns:1fr;gap:24px;}
+
+  /* Notice cards */
+  .notice-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:28px;}
+  .notice-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+  .notice-card h3{color:var(--navy);font-size:1rem;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  .notice-card p{font-size:.88rem;color:var(--text-soft);}
+  .notice-list{
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .notice-list li{
+    position:relative;padding-left:20px;font-size:.88rem;color:var(--text-soft);margin-bottom:10px;
+  }
+  .notice-list li:last-child{margin-bottom:0;}
+  .notice-list li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--sea-light);}
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(135deg,var(--navy),var(--deep));
+    color:var(--white);border-radius:var(--radius);padding:40px 28px;text-align:center;
+  }
+  .cta-band h2{font-size:1.4rem;}
+  .cta-band p{margin-top:12px;color:rgba(255,255,255,.85);font-size:.92rem;}
+
+  /* Footer (共通デザイン) */
+  footer{background:var(--navy);color:rgba(255,255,255,.85);padding:48px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:32px;}
+  .footer-brand h3{color:var(--white);font-size:1.15rem;}
+  .footer-brand p{margin-top:10px;font-size:.85rem;color:rgba(255,255,255,.65);}
+  .footer-links h4{color:var(--white);font-size:.85rem;margin-bottom:12px;letter-spacing:.05em;}
+  .footer-links li{margin-bottom:8px;font-size:.86rem;}
+  .footer-links a{text-decoration:none;color:rgba(255,255,255,.75);}
+  .footer-links a:hover{color:var(--sea-light);}
+  .footer-cta{display:flex;flex-direction:column;gap:10px;}
+  .btn-insta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;border:1px solid rgba(255,255,255,.4);
+    color:var(--white);padding:10px 16px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;
+  }
+  .btn-insta:hover{background:rgba(255,255,255,.1);}
+  .btn-official{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;color:#ffffff;
+    border:1px solid transparent;
+  }
+  .btn-official svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-line{background:#06C755;}
+  .btn-line:hover{background:#05a648;}
+  .btn-instagram{background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);}
+  .btn-instagram:hover{filter:brightness(1.08);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:.78rem;
+    color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;
+  }
+  .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:underline;}
+
+  @media (min-width:640px){
+    .page-hero h1{font-size:2.1rem;}
+    .two-col{grid-template-columns:1fr 1fr;}
+    .notice-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .site-nav{display:flex;}
+    .header-cta{display:inline-flex;}
+    .section-head h2{font-size:1.8rem;}
+    .page-hero-inner{padding:120px 0 56px;}
+    .page-hero h1{font-size:2.4rem;}
+    .notice-grid{grid-template-columns:repeat(4,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">〔ショップ名〕</a>
+    <nav class="site-nav">
+      <a href="index.html#reasons">選ばれる理由</a>
+      <a href="index.html#products">入荷個体一覧</a>
+      <a href="index.html#faq">よくあるご質問</a>
+      <a href="index.html">トップへ戻る</a>
+    </nav>
+    <a class="header-cta" href="index.html#products">入荷中の個体を見る</a>
+  </div>
+</header>
+
+<main>
+  <!-- 2. ページ内ヒーロー -->
+  <section class="page-hero">
+    <div class="wrap page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">トップ</a> ／ 店舗のご案内</div>
+      <h1>店舗のご案内</h1>
+      <p class="lead">実際の個体の色づきや動きを、ご自身の目でご覧いただけます。水槽づくりのご相談もその場で承っています。</p>
+    </div>
+  </section>
+
+  <!-- 3. 所在地・アクセス -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">ACCESS</span>
+        <h2>所在地・アクセス</h2>
+      </div>
+      <div class="map-placeholder">〔地図プレースホルダー：Googleマップ等の埋め込み予定地〕</div>
+      <div class="info-table-wrap">
+        <table class="info-table">
+          <tr><th>店舗名</th><td>〔ショップ名〕 実店舗</td></tr>
+          <tr><th>住所</th><td>〔郵便番号〕〔都道府県〕〔市区町村〕〔番地・建物名〕</td></tr>
+          <tr><th>最寄り駅</th><td>〔最寄り駅名〕から徒歩〔◯分〕</td></tr>
+          <tr><th>駐車場</th><td>〔駐車場の有無・台数・提携駐車場情報〕</td></tr>
+          <tr><th>電話番号</th><td>〔電話番号〕</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 営業時間・定休日 -->
+  <section class="bg-mist">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">HOURS</span>
+        <h2>営業時間・定休日</h2>
+      </div>
+      <div class="info-table-wrap">
+        <table class="info-table">
+          <tr><th>営業時間</th><td>〔開店時刻〕〜〔閉店時刻〕</td></tr>
+          <tr><th>定休日</th><td>〔定休日（例：毎週水曜日・年末年始）〕</td></tr>
+          <tr><th>臨時休業</th><td>臨時休業がある場合はトップページ「入荷速報」欄にてお知らせします。</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ご来店にあたっての注意事項 -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">NOTICE</span>
+        <h2>ご来店にあたっての注意事項</h2>
+        <p>スムーズにご案内するため、事前に以下をご確認いただけますと幸いです。</p>
+      </div>
+      <div class="notice-grid">
+        <div class="notice-card">
+          <h3>📅 ご予約について</h3>
+          <p>個体をゆっくりご覧いただくため、事前のご予約を推奨しています。当日のご来店も可能な範囲で対応いたします。</p>
+        </div>
+        <div class="notice-card">
+          <h3>📦 お持ち帰りの梱包</h3>
+          <p>店頭でご購入いただいた個体も、輸送用と同様の梱包でお渡し可能です。移動時間が長い場合は事前にお伝えください。</p>
+        </div>
+        <div class="notice-card">
+          <h3>🐠 水槽のご相談</h3>
+          <p>水槽の写真やサイズ、照明・水流機材の情報をお持ちいただくと、より具体的なご提案が可能です。</p>
+        </div>
+        <div class="notice-card">
+          <h3>💳 お支払い方法</h3>
+          <p>店頭では現金・クレジットカード・電子マネーに対応しています。ご利用可能な決済手段は変更になる場合があります。</p>
+        </div>
+      </div>
+      <div class="notice-list">
+        <ul>
+          <li>〔混雑状況により、お待ちいただく場合がございます〕</li>
+          <li>〔小さなお子様・ペット同伴の際は他のお客様へのご配慮をお願いしております〕</li>
+          <li>〔展示個体は販売中のものです。取り扱いにはスタッフまでお声がけください〕</li>
+          <li>〔最新の入荷状況は来店前にオンラインストアもご確認ください〕</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTAバンド -->
+  <section class="bg-mist">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>ご来店前のご相談も承っています</h2>
+        <p>気になる個体の在庫状況や水槽のご相談など、メール・公式LINEからお気軽にお問い合わせください。</p>
+        <div class="cta-row">
+          <a href="index.html#contact" class="btn btn-primary">お問い合わせフォームへ</a>
+          <a href="index.html#faq" class="btn btn-outline">よくあるご質問を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 7. フッター -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>〔ショップ名〕</h3>
+        <p>〔状態管理を徹底した、初心者にもやさしいサンゴ専門店〕として、生体サンゴをお届けしています。</p>
+      </div>
+      <div class="footer-links">
+        <h4>サイトマップ</h4>
+        <ul>
+          <li><a href="index.html">トップページ</a></li>
+          <li><a href="index.html#products">入荷個体一覧</a></li>
+          <li><a href="index.html#faq">よくあるご質問</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <h4 style="color:#fff;font-size:.85rem;margin-bottom:4px;">お問い合わせ</h4>
+        <a class="btn-insta" href="index.html#contact">✉️ メールで問い合わせる</a>
+        <a class="btn-official btn-line" href="https://line.me/R/ti/p/%E3%80%94%E5%85%AC%E5%BC%8FLINE%E3%81%AEID%E3%80%95">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 3.2 2.02 6 5.02 7.55-.22.8-.8 2.9-.92 3.35-.15.55.2.55.42.4.17-.12 2.7-1.83 3.8-2.58.54.08 1.1.12 1.68.12 5.52 0 10-3.94 10-8.84C22 5.94 17.52 2 12 2z"/></svg>
+          LINEで友だち追加
+        </a>
+        <a class="btn-official btn-instagram" href="https://www.instagram.com/〔ショップ名のInstagramID〕/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          Instagramをフォローする
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 〔ショップ名〕</span>
+      <span><a href="tokushoho.html">特定商取引法に基づく表記</a></span>
+      <span><a href="privacy.html">プライバシーポリシー</a></span>
+      <span><a href="index.html">トップページに戻る</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

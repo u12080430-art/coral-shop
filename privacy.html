@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー｜〔ショップ名〕</title>
+<meta name="description" content="〔ショップ名〕の個人情報保護方針（プライバシーポリシー）です。">
+<style>
+  :root{
+    --navy:#0b3350;
+    --deep:#0e4a6e;
+    --sea:#1c7ea3;
+    --sea-light:#5fb8d6;
+    --mist:#eef6f8;
+    --white:#ffffff;
+    --coral:#ff7a59;
+    --coral-dark:#e8613f;
+    --text:#1e2d33;
+    --text-soft:#4d6470;
+    --border:#d8e6ea;
+    --radius:14px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ul,ol{margin:0;padding:0;}
+  h1,h2,h3,h4{margin:0;line-height:1.4;}
+  p{margin:0;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  .bg-mist{background:var(--mist);}
+
+  /* Header (共通デザイン) */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:1120px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .logo{font-weight:700;color:var(--navy);font-size:1.05rem;text-decoration:none;letter-spacing:.02em;}
+  .site-nav{display:none;gap:22px;font-size:.88rem;font-weight:600;color:var(--text-soft);}
+  .site-nav a{text-decoration:none;}
+  .site-nav a:hover{color:var(--sea);}
+  .header-cta{
+    display:none;background:var(--coral);color:var(--white);
+    padding:9px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--coral-dark);}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 28px;border-radius:100px;font-weight:700;font-size:.98rem;
+    text-decoration:none;border:2px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--coral);color:var(--white);}
+  .btn-primary:hover{background:var(--coral-dark);}
+  .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px;}
+
+  /* Legal page hero */
+  .legal-hero{
+    background:linear-gradient(135deg,var(--navy),var(--deep));
+    color:var(--white);
+    padding:70px 0 40px;
+  }
+  .breadcrumb{font-size:.8rem;color:rgba(255,255,255,.75);margin-bottom:14px;}
+  .breadcrumb a{text-decoration:underline;color:rgba(255,255,255,.9);}
+  .legal-hero h1{font-size:1.7rem;}
+  .legal-hero p{margin-top:14px;color:rgba(255,255,255,.85);font-size:.92rem;max-width:600px;}
+
+  /* Legal content body */
+  .legal-wrap{max-width:820px;margin:0 auto;}
+  .legal-meta-box{
+    display:flex;flex-wrap:wrap;gap:10px 28px;
+    background:var(--mist);border:1px solid var(--border);border-radius:10px;
+    padding:16px 20px;margin-bottom:36px;font-size:.85rem;color:var(--text-soft);
+  }
+  .legal-meta-box strong{color:var(--navy);}
+  .legal-block{margin-bottom:32px;}
+  .legal-block:last-child{margin-bottom:0;}
+  .legal-block h2{
+    font-size:1.05rem;color:var(--navy);
+    display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .legal-block .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--sea);color:var(--white);font-size:.8rem;font-weight:700;flex-shrink:0;
+  }
+  .legal-block p{font-size:.9rem;color:var(--text-soft);margin-bottom:8px;}
+  .legal-block ul{padding-left:1.3em;margin-top:6px;}
+  .legal-block li{font-size:.9rem;color:var(--text-soft);margin-bottom:6px;list-style:disc;}
+  .legal-contact-box{
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 22px;font-size:.88rem;color:var(--text-soft);
+  }
+  .legal-contact-box strong{color:var(--navy);display:block;margin-bottom:8px;font-size:.92rem;}
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(135deg,var(--navy),var(--deep));
+    color:var(--white);border-radius:var(--radius);padding:40px 28px;text-align:center;
+  }
+  .cta-band h2{font-size:1.4rem;}
+  .cta-band p{margin-top:12px;color:rgba(255,255,255,.85);font-size:.92rem;}
+
+  /* Footer (共通デザイン) */
+  footer{background:var(--navy);color:rgba(255,255,255,.85);padding:48px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:32px;}
+  .footer-brand h3{color:var(--white);font-size:1.15rem;}
+  .footer-brand p{margin-top:10px;font-size:.85rem;color:rgba(255,255,255,.65);}
+  .footer-links h4{color:var(--white);font-size:.85rem;margin-bottom:12px;letter-spacing:.05em;}
+  .footer-links ul{list-style:none;}
+  .footer-links li{margin-bottom:8px;font-size:.86rem;}
+  .footer-links a{text-decoration:none;color:rgba(255,255,255,.75);}
+  .footer-links a:hover{color:var(--sea-light);}
+  .footer-cta{display:flex;flex-direction:column;gap:10px;}
+  .btn-insta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;border:1px solid rgba(255,255,255,.4);
+    color:var(--white);padding:10px 16px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;
+  }
+  .btn-insta:hover{background:rgba(255,255,255,.1);}
+  .btn-official{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;color:#ffffff;
+    border:1px solid transparent;
+  }
+  .btn-official svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-line{background:#06C755;}
+  .btn-line:hover{background:#05a648;}
+  .btn-instagram{background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);}
+  .btn-instagram:hover{filter:brightness(1.08);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:.78rem;
+    color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;
+  }
+  .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:underline;}
+
+  @media (min-width:640px){
+    .legal-hero h1{font-size:2rem;}
+    .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .site-nav{display:flex;}
+    .header-cta{display:inline-flex;}
+    .legal-hero{padding:100px 0 56px;}
+    .legal-hero h1{font-size:2.2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">〔ショップ名〕</a>
+    <nav class="site-nav">
+      <a href="index.html#products">入荷個体一覧</a>
+      <a href="index.html#faq">よくあるご質問</a>
+      <a href="store.html">実店舗のご案内</a>
+      <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="index.html">トップへ戻る</a>
+    </nav>
+    <a class="header-cta" href="index.html#products">入荷中の個体を見る</a>
+  </div>
+</header>
+
+<main>
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">トップ</a> ／ プライバシーポリシー</div>
+      <h1>プライバシーポリシー（個人情報保護方針）</h1>
+      <p>〔ショップ名〕（以下「当店」といいます）は、お客様の個人情報を適切に取り扱うため、以下のとおりプライバシーポリシーを定めます。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-wrap">
+
+        <div class="legal-meta-box">
+          <span><strong>制定日</strong>〔20XX年X月X日〕</span>
+          <span><strong>最終改定日</strong>〔20XX年X月X日〕</span>
+          <span><strong>事業者名</strong>〔ショップ名〕</span>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">1</span>基本方針</h2>
+          <p>当店は、お客様からお預かりする個人情報の重要性を認識し、個人情報の保護に関する法律その他の関係法令・ガイドラインを遵守するとともに、社内体制の整備に努め、個人情報を適切に取り扱います。</p>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">2</span>個人情報の取得</h2>
+          <p>当店は、お問い合わせフォームのご利用やご注文の際に、以下のような個人情報を適正かつ公正な手段によって取得します。</p>
+          <ul>
+            <li>お名前・フリガナ</li>
+            <li>メールアドレス・電話番号</li>
+            <li>配送先住所</li>
+            <li>お問い合わせ内容、お取引に関する情報</li>
+          </ul>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">3</span>個人情報を利用する目的</h2>
+          <p>取得した個人情報は、以下の目的の範囲内で利用します。</p>
+          <ul>
+            <li>ご注文いただいた商品の発送、代金決済のため</li>
+            <li>お問い合わせへの回答、購入前後のアフターサポートのため</li>
+            <li>入荷情報等のご案内（ご希望いただいたお客様のみ）のため</li>
+            <li>当店サービスの改善、利用状況の分析・統計データの作成のため</li>
+          </ul>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">4</span>個人情報の第三者提供</h2>
+          <p>当店は、以下のいずれかに該当する場合を除き、あらかじめお客様の同意を得ることなく個人情報を第三者に提供することはありません。</p>
+          <ul>
+            <li>法令に基づく場合</li>
+            <li>人の生命・身体・財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+            <li>配送業務・決済処理など、利用目的の達成に必要な範囲内で業務委託先に提供する場合</li>
+          </ul>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">5</span>個人情報の安全管理</h2>
+          <p>当店は、取得した個人情報への不正アクセス、紛失、破壊、改ざん、漏えい等を防止するため、必要かつ適切な安全管理措置を講じます。また、個人情報を取り扱う従業員に対して、必要な教育を行います。</p>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">6</span>開示・訂正・利用停止等の請求</h2>
+          <p>お客様がご自身の個人情報について、開示・訂正・追加・削除・利用停止等をご希望される場合は、本人であることを確認のうえ、法令に従い速やかに対応いたします。ご希望の際は、下記のお問い合わせ窓口までご連絡ください。</p>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">7</span>Cookie等の使用について</h2>
+          <p>当店のウェブサイトでは、サイトの利便性向上や利用状況の把握のためにCookie等を使用する場合があります。Cookieには、氏名・住所・電話番号等の個人を特定できる情報は含まれません。ブラウザの設定によりCookieの利用を拒否することも可能ですが、その場合、当サイトの一部機能がご利用いただけないことがあります。</p>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">8</span>お問い合わせ窓口</h2>
+          <p>個人情報の取り扱いに関するお問い合わせは、下記の窓口までご連絡ください。</p>
+          <div class="legal-contact-box">
+            <strong>〔ショップ名〕　個人情報お問い合わせ窓口</strong>
+            メールアドレス：〔メールアドレス〕<br>
+            電話番号：〔電話番号〕（受付時間　〔◯時〕〜〔◯時〕）
+          </div>
+        </div>
+
+        <div class="legal-block">
+          <h2><span class="num">9</span>プライバシーポリシーの改定</h2>
+          <p>当店は、法令の変更やサービス内容の変更等に応じて、本ポリシーの内容を予告なく改定することがあります。改定後のプライバシーポリシーは、本ページに掲載した時点から効力を生じるものとします。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-mist">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>個人情報の取り扱いについてご不明な点がありましたら</h2>
+        <p>お気軽にお問い合わせフォームよりご連絡ください。</p>
+        <div class="cta-row">
+          <a href="index.html#contact" class="btn btn-primary">お問い合わせフォームへ</a>
+          <a href="tokushoho.html" class="btn btn-outline">特定商取引法に基づく表記を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>〔ショップ名〕</h3>
+        <p>〔状態管理を徹底した、初心者にもやさしいサンゴ専門店〕として、生体サンゴをお届けしています。</p>
+      </div>
+      <div class="footer-links">
+        <h4>サイトマップ</h4>
+        <ul>
+          <li><a href="index.html">トップページ</a></li>
+          <li><a href="index.html#products">入荷個体一覧</a></li>
+          <li><a href="store.html">実店舗のご案内</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <h4 style="color:#fff;font-size:.85rem;margin-bottom:4px;">お問い合わせ</h4>
+        <a class="btn-insta" href="index.html#contact">✉️ メールで問い合わせる</a>
+        <a class="btn-official btn-line" href="https://line.me/R/ti/p/%E3%80%94%E5%85%AC%E5%BC%8FLINE%E3%81%AEID%E3%80%95">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 3.2 2.02 6 5.02 7.55-.22.8-.8 2.9-.92 3.35-.15.55.2.55.42.4.17-.12 2.7-1.83 3.8-2.58.54.08 1.1.12 1.68.12 5.52 0 10-3.94 10-8.84C22 5.94 17.52 2 12 2z"/></svg>
+          LINEで友だち追加
+        </a>
+        <a class="btn-official btn-instagram" href="https://www.instagram.com/〔ショップ名のInstagramID〕/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          Instagramをフォローする
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 〔ショップ名〕</span>
+      <span><a href="tokushoho.html">特定商取引法に基づく表記</a></span>
+      <span><a href="privacy.html">プライバシーポリシー</a></span>
+      <span><a href="index.html">トップページに戻る</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

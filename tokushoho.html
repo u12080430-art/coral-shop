@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特定商取引法に基づく表記｜〔ショップ名〕</title>
+<meta name="description" content="〔ショップ名〕の特定商取引法に基づく表記です。">
+<style>
+  :root{
+    --navy:#0b3350;
+    --deep:#0e4a6e;
+    --sea:#1c7ea3;
+    --sea-light:#5fb8d6;
+    --mist:#eef6f8;
+    --white:#ffffff;
+    --coral:#ff7a59;
+    --coral-dark:#e8613f;
+    --text:#1e2d33;
+    --text-soft:#4d6470;
+    --border:#d8e6ea;
+    --radius:14px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ul{margin:0;padding:0;list-style:none;}
+  h1,h2,h3,h4{margin:0;line-height:1.4;}
+  p{margin:0;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding:56px 0;}
+  .section-head{max-width:640px;margin:0 auto 32px;text-align:center;}
+  .section-eyebrow{
+    display:inline-block;color:var(--sea);font-weight:700;
+    font-size:.8rem;letter-spacing:.12em;margin-bottom:8px;
+  }
+  .section-head h2{font-size:1.5rem;color:var(--navy);}
+  .section-head p{margin-top:12px;color:var(--text-soft);font-size:.95rem;}
+  .bg-mist{background:var(--mist);}
+
+  /* Header (共通デザイン) */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .header-inner{
+    max-width:1120px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .logo{font-weight:700;color:var(--navy);font-size:1.05rem;text-decoration:none;letter-spacing:.02em;}
+  .site-nav{display:none;gap:22px;font-size:.88rem;font-weight:600;color:var(--text-soft);}
+  .site-nav a{text-decoration:none;}
+  .site-nav a:hover{color:var(--sea);}
+  .header-cta{
+    display:none;background:var(--coral);color:var(--white);
+    padding:9px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--coral-dark);}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 28px;border-radius:100px;font-weight:700;font-size:.98rem;
+    text-decoration:none;border:2px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--coral);color:var(--white);}
+  .btn-primary:hover{background:var(--coral-dark);}
+  .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px;}
+
+  /* Legal page hero (写真なしの単色ヒーロー) */
+  .legal-hero{
+    background:linear-gradient(135deg,var(--navy),var(--deep));
+    color:var(--white);
+    padding:70px 0 40px;
+  }
+  .breadcrumb{font-size:.8rem;color:rgba(255,255,255,.75);margin-bottom:14px;}
+  .breadcrumb a{text-decoration:underline;color:rgba(255,255,255,.9);}
+  .legal-hero h1{font-size:1.7rem;}
+  .legal-hero p{margin-top:14px;color:rgba(255,255,255,.85);font-size:.92rem;max-width:600px;}
+
+  /* Info table */
+  .info-table-wrap{
+    background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  table.info-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+  table.info-table th,table.info-table td{
+    text-align:left;padding:16px 18px;border-bottom:1px solid var(--border);vertical-align:top;
+  }
+  table.info-table tr:last-child th, table.info-table tr:last-child td{border-bottom:none;}
+  table.info-table th{
+    width:32%;color:var(--navy);font-weight:700;background:var(--mist);
+  }
+  table.info-table td{color:var(--text-soft);}
+
+  .legal-note{
+    max-width:820px;margin:0 auto 24px;font-size:.85rem;color:var(--text-soft);
+    background:var(--mist);border:1px solid var(--border);border-radius:10px;padding:16px 20px;
+  }
+  .legal-wrap{max-width:820px;margin:0 auto;}
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(135deg,var(--navy),var(--deep));
+    color:var(--white);border-radius:var(--radius);padding:40px 28px;text-align:center;
+  }
+  .cta-band h2{font-size:1.4rem;}
+  .cta-band p{margin-top:12px;color:rgba(255,255,255,.85);font-size:.92rem;}
+
+  /* Footer (共通デザイン) */
+  footer{background:var(--navy);color:rgba(255,255,255,.85);padding:48px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-bottom:32px;}
+  .footer-brand h3{color:var(--white);font-size:1.15rem;}
+  .footer-brand p{margin-top:10px;font-size:.85rem;color:rgba(255,255,255,.65);}
+  .footer-links h4{color:var(--white);font-size:.85rem;margin-bottom:12px;letter-spacing:.05em;}
+  .footer-links li{margin-bottom:8px;font-size:.86rem;}
+  .footer-links a{text-decoration:none;color:rgba(255,255,255,.75);}
+  .footer-links a:hover{color:var(--sea-light);}
+  .footer-cta{display:flex;flex-direction:column;gap:10px;}
+  .btn-insta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;border:1px solid rgba(255,255,255,.4);
+    color:var(--white);padding:10px 16px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;
+  }
+  .btn-insta:hover{background:rgba(255,255,255,.1);}
+  .btn-official{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;border-radius:100px;font-size:.85rem;font-weight:700;
+    text-decoration:none;width:fit-content;color:#ffffff;
+    border:1px solid transparent;
+  }
+  .btn-official svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-line{background:#06C755;}
+  .btn-line:hover{background:#05a648;}
+  .btn-instagram{background:linear-gradient(45deg,#f9ce34 0%,#ee2a7b 50%,#6228d7 100%);}
+  .btn-instagram:hover{filter:brightness(1.08);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:.78rem;
+    color:rgba(255,255,255,.55);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;
+  }
+  .footer-bottom a{color:rgba(255,255,255,.7);text-decoration:underline;}
+
+  @media (min-width:640px){
+    .legal-hero h1{font-size:2rem;}
+    .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+  }
+  @media (min-width:900px){
+    .site-nav{display:flex;}
+    .header-cta{display:inline-flex;}
+    .section-head h2{font-size:1.8rem;}
+    .legal-hero{padding:100px 0 56px;}
+    .legal-hero h1{font-size:2.2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">〔ショップ名〕</a>
+    <nav class="site-nav">
+      <a href="index.html#products">入荷個体一覧</a>
+      <a href="index.html#faq">よくあるご質問</a>
+      <a href="store.html">実店舗のご案内</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="index.html">トップへ戻る</a>
+    </nav>
+    <a class="header-cta" href="index.html#products">入荷中の個体を見る</a>
+  </div>
+</header>
+
+<main>
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">トップ</a> ／ 特定商取引法に基づく表記</div>
+      <h1>特定商取引法に基づく表記</h1>
+      <p>特定商取引に関する法律第11条に基づき、以下のとおり表示いたします。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-wrap">
+        <p class="legal-note">
+          記載内容は一般的なひな形です。実際の運用にあたっては、事業者情報・料金・引き渡し時期等を〔　〕内の実データに置き換えてご使用ください。
+        </p>
+        <div class="info-table-wrap">
+          <table class="info-table">
+            <tr><th>販売業者</th><td>〔事業者名（法人名または個人事業主名）〕</td></tr>
+            <tr><th>運営統括責任者</th><td>〔運営責任者氏名〕</td></tr>
+            <tr><th>所在地</th><td>〔郵便番号〕〔住所〕<br>※ご請求をいただいた場合には、遅滞なく開示いたします。</td></tr>
+            <tr><th>電話番号</th><td>〔電話番号〕（受付時間　〔◯時〕〜〔◯時〕）</td></tr>
+            <tr><th>メールアドレス</th><td>〔メールアドレス〕</td></tr>
+            <tr><th>販売URL</th><td>〔サイトURL〕</td></tr>
+            <tr><th>販売価格</th><td>各商品ページに表示する価格（すべて税込）</td></tr>
+            <tr><th>商品代金以外の必要料金</th><td>送料、振込手数料、代金引換手数料等。詳細は「配送・梱包の安心」ページをご確認ください。</td></tr>
+            <tr><th>お支払い方法</th><td>クレジットカード決済／銀行振込／代金引換</td></tr>
+            <tr><th>お支払い時期</th><td>クレジットカード決済はご注文確定時、銀行振込はご注文後〔◯日〕以内、代金引換は商品お届け時にお支払いいただきます。</td></tr>
+            <tr><th>商品の引き渡し時期</th><td>ご注文確認後、通常2〜4営業日以内に発送いたします。天候や個体の状態により前後する場合があります。</td></tr>
+            <tr><th>返品・交換について</th><td>
+              生体という商品の性質上、お客様のご都合による返品・交換はお受けできません。<br>
+              ただし、輸送中の事故や梱包の不備など当店に起因する理由により個体の状態が著しく損なわれていた場合は、
+              商品到着後24時間以内にご連絡いただくことで個別に対応いたします。
+            </td></tr>
+            <tr><th>販売数量の制限</th><td>在庫状況・個体の管理上の理由により、お一人様あたりのご注文数量を制限させていただく場合があります。</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-mist">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>ご不明点はお気軽にお問い合わせください</h2>
+        <p>お支払いや配送に関するご質問は、メールフォームまたはよくあるご質問をご確認ください。</p>
+        <div class="cta-row">
+          <a href="index.html#contact" class="btn btn-primary">お問い合わせフォームへ</a>
+          <a href="index.html#faq" class="btn btn-outline">よくあるご質問を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>〔ショップ名〕</h3>
+        <p>〔状態管理を徹底した、初心者にもやさしいサンゴ専門店〕として、生体サンゴをお届けしています。</p>
+      </div>
+      <div class="footer-links">
+        <h4>サイトマップ</h4>
+        <ul>
+          <li><a href="index.html">トップページ</a></li>
+          <li><a href="index.html#products">入荷個体一覧</a></li>
+          <li><a href="store.html">実店舗のご案内</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer-cta">
+        <h4 style="color:#fff;font-size:.85rem;margin-bottom:4px;">お問い合わせ</h4>
+        <a class="btn-insta" href="index.html#contact">✉️ メールで問い合わせる</a>
+        <a class="btn-official btn-line" href="https://line.me/R/ti/p/%E3%80%94%E5%85%AC%E5%BC%8FLINE%E3%81%AEID%E3%80%95">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 3.2 2.02 6 5.02 7.55-.22.8-.8 2.9-.92 3.35-.15.55.2.55.42.4.17-.12 2.7-1.83 3.8-2.58.54.08 1.1.12 1.68.12 5.52 0 10-3.94 10-8.84C22 5.94 17.52 2 12 2z"/></svg>
+          LINEで友だち追加
+        </a>
+        <a class="btn-official btn-instagram" href="https://www.instagram.com/〔ショップ名のInstagramID〕/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+          Instagramをフォローする
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 〔ショップ名〕</span>
+      <span><a href="tokushoho.html">特定商取引法に基づく表記</a></span>
+      <span><a href="privacy.html">プライバシーポリシー</a></span>
+      <span><a href="index.html">トップページに戻る</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
