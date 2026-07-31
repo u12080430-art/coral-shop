@@ -142,81 +142,42 @@
   .reason-card h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
   .reason-card p{font-size:.9rem;color:var(--text-soft);}
 
-  /* Category tabs / headings */
-  .category-block{margin-bottom:40px;}
-  .category-title{
-    display:flex;align-items:center;gap:12px;
-    margin-bottom:18px;
+  /* BASEショップ連携・商品グリッド */
+  .base-product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .base-product-card{
+    position:relative;display:block;aspect-ratio:1/1;
+    border-radius:var(--radius);overflow:hidden;
+    background:var(--mist);text-decoration:none;
   }
-  .category-title h3{font-size:1.15rem;color:var(--navy);}
-  .category-title .count{font-size:.8rem;color:var(--text-soft);}
-  .category-title::after{content:"";flex:1;height:1px;background:var(--border);}
-
-  .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
-  .product-card{
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    overflow:hidden;
-    background:var(--white);
-    display:flex;flex-direction:column;
+  .base-product-photo{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;background-color:var(--mist);
+    transition:transform .3s ease;
   }
-  .product-photo{
-    position:relative;
-    aspect-ratio:4/3;
-    background-size:cover;
-    background-position:center;
-    background-color:var(--mist);
-  }
-  /* カーソルを合わせると画面中央に約1/3サイズで拡大表示（マウス操作の環境のみ有効） */
-  .product-photo::after{
-    content:"";
-    position:fixed;
-    top:50%;left:50%;
-    width:min(66vw, 960px);
-    aspect-ratio:4/3;
-    background-image:inherit;
-    background-size:cover;
-    background-position:center;
-    border-radius:16px;
-    box-shadow:0 24px 70px rgba(0,0,0,.4);
-    z-index:999;
+  .base-product-overlay{
+    position:absolute;inset:auto 0 0 0;
+    padding:16px 12px 12px;
+    background:linear-gradient(180deg, rgba(11,51,80,0) 0%, rgba(11,51,80,.88) 100%);
+    color:var(--white);
     opacity:0;
-    visibility:hidden;
-    transform:translate(-50%,-50%) scale(.85);
-    transition:opacity .2s ease, transform .2s ease, visibility .2s;
-    pointer-events:none;
+    transform:translateY(8px);
+    transition:opacity .2s ease, transform .2s ease;
   }
+  .base-product-title{
+    font-size:.82rem;font-weight:700;margin-bottom:2px;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .base-product-price{font-size:.95rem;font-weight:700;}
+  .base-product-price small{font-size:.65rem;font-weight:400;opacity:.85;}
+  .base-product-card.show-overlay .base-product-overlay{opacity:1;transform:translateY(0);}
   @media (hover:hover) and (pointer:fine){
-    .product-photo:hover::after{
-      opacity:1;
-      visibility:visible;
-      transform:translate(-50%,-50%) scale(1);
-    }
+    .base-product-card:hover .base-product-overlay{opacity:1;transform:translateY(0);}
+    .base-product-card:hover .base-product-photo{transform:scale(1.05);}
   }
-  .badge{
-    position:absolute;top:6px;
-    font-size:.62rem;font-weight:700;
-    padding:4px 8px;border-radius:100px;
-    letter-spacing:.02em;
+  .product-loading-msg{
+    text-align:center;color:var(--text-soft);font-size:.9rem;
+    padding:32px 0;grid-column:1/-1;
   }
-  .badge-stock{left:6px;background:var(--white);color:var(--sea);box-shadow:0 2px 6px rgba(0,0,0,.15);}
-  .badge-stock.low{color:var(--coral-dark);}
-  .badge-stock.ask{color:var(--text-soft);}
-  .badge-category{right:6px;background:rgba(11,51,80,.82);color:var(--white);}
-  .product-body{padding:10px;display:flex;flex-direction:column;gap:6px;flex:1;}
-  .product-body h4{font-size:.88rem;color:var(--navy);}
-  .product-meta{display:flex;flex-wrap:wrap;gap:5px;font-size:.65rem;color:var(--text-soft);}
-  .product-meta span{background:var(--mist);padding:3px 7px;border-radius:6px;}
-  .product-comment{
-    font-size:.74rem;color:var(--text-soft);flex:1;
-    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
-  }
-  .product-price{
-    display:flex;align-items:baseline;justify-content:space-between;
-    margin-top:2px;padding-top:8px;border-top:1px dashed var(--border);
-  }
-  .product-price .price{font-size:1rem;font-weight:700;color:var(--navy);}
-  .product-price .price small{font-size:.65rem;font-weight:400;color:var(--text-soft);}
 
   /* News */
   .news-list{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white);}
@@ -364,7 +325,7 @@
 
   @media (min-width:640px){
     .reason-grid{grid-template-columns:repeat(2,1fr);}
-    .product-grid{grid-template-columns:repeat(3,1fr);}
+    .base-product-grid{grid-template-columns:repeat(3,1fr);}
     .info-grid{grid-template-columns:repeat(2,1fr);}
     .review-grid{grid-template-columns:repeat(3,1fr);}
     .hero h1{font-size:2.3rem;}
@@ -375,7 +336,7 @@
     .site-nav{display:flex;}
     .header-cta{display:inline-flex;}
     .reason-grid{grid-template-columns:repeat(4,1fr);}
-    .product-grid{grid-template-columns:repeat(4,1fr);}
+    .base-product-grid{grid-template-columns:repeat(4,1fr);}
     .section-head h2{font-size:1.8rem;}
     .hero-inner{padding:170px 0 80px;}
     .hero h1{font-size:2.8rem;}
@@ -453,217 +414,9 @@
         <p>状態は日々変化します。掲載内容は入荷時点の目安としてご参照のうえ、詳細はお問い合わせください。</p>
       </div>
 
-      <div class="category-block">
-        <div class="category-title">
-          <h3>ハードコーラル</h3>
-          <span class="count">全5点</span>
-        </div>
-        <div class="product-grid">
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1573062940355-8cd2fe0c99a4?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">ハードコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>ミドリイシ〔グリーン〕</h4>
-              <div class="product-meta"><span>サイズ目安 約6cm</span><span>飼育難易度 上級</span></div>
-              <p class="product-comment">枝先まで色が均一に伸びており、輸送によるポリプの萎縮も見られません。強めの光量と水流を確保できる水槽向けです。</p>
-              <div class="product-price"><span class="price">¥8,800<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1650280175181-d17c360bef7c?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">ハードコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>コモンサンゴ〔ミックスカラー〕</h4>
-              <div class="product-meta"><span>サイズ目安 約8cm</span><span>飼育難易度 中級</span></div>
-              <p class="product-comment">丈夫で扱いやすく、ハードコーラルを初めて迎える方にも試しやすい種類です。表面の発色も落ち着いています。</p>
-              <div class="product-price"><span class="price">¥5,500<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1762336219274-3daf871ae18c?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock low">残りわずか</span>
-              <span class="badge badge-category">ハードコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>ノウサンゴ〔ブレインタイプ〕</h4>
-              <div class="product-meta"><span>サイズ目安 約10cm</span><span>飼育難易度 初級</span></div>
-              <p class="product-comment">脳状の模様がはっきりと出た個体です。水流を強く当てすぎない環境でゆったりと育てられます。</p>
-              <div class="product-price"><span class="price">¥6,600<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1739608400060-0c92ded25244?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">ハードコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>ハナサンゴ〔パープルティップ〕</h4>
-              <div class="product-meta"><span>サイズ目安 約7cm</span><span>飼育難易度 中級</span></div>
-              <p class="product-comment">触手の先端に色が乗った個体で、給餌にもよく反応します。他の個体と間隔を空けて設置してください。</p>
-              <div class="product-price"><span class="price">¥7,700<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1632456417636-8425fb148522?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock ask">要相談</span>
-              <span class="badge badge-category">ハードコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>トゲキクメイシ〔レッド〕</h4>
-              <div class="product-meta"><span>サイズ目安 約9cm</span><span>飼育難易度 中級</span></div>
-              <p class="product-comment">群体としての大きさがあるため、設置場所や水槽サイズについて事前にご相談いただくことをおすすめします。</p>
-              <div class="product-price"><span class="price">¥12,100<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-title">
-          <h3>ソフトコーラル</h3>
-          <span class="count">全3点</span>
-        </div>
-        <div class="product-grid">
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1613117799054-66cacc1914c3?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">ソフトコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>ウミキノコ〔スタンダード〕</h4>
-              <div class="product-meta"><span>サイズ目安 約8cm</span><span>飼育難易度 初級</span></div>
-              <p class="product-comment">環境への順応が早く、ソフトコーラル入門にも向いています。表面の触手が全体的にしっかり展開しています。</p>
-              <div class="product-price"><span class="price">¥4,400<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1561990488-0e16d60eaa79?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">ソフトコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>トサカ〔ブルー〕</h4>
-              <div class="product-meta"><span>サイズ目安 約10cm</span><span>飼育難易度 初級</span></div>
-              <p class="product-comment">やわらかな質感で水流に揺れる姿が楽しめる個体です。強すぎない照明環境でも色を保ちやすいタイプです。</p>
-              <div class="product-price"><span class="price">¥5,280<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1773221937975-940c37f092d0?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock low">残りわずか</span>
-              <span class="badge badge-category">ソフトコーラル</span>
-            </div>
-            <div class="product-body">
-              <h4>マメスナギンチャク〔ミックス〕</h4>
-              <div class="product-meta"><span>サイズ目安 群体幅約6cm</span><span>飼育難易度 初級</span></div>
-              <p class="product-comment">複数の色が混在した群体です。増殖のスピードが早いため、レイアウトの余白を考えて設置するのがおすすめです。</p>
-              <div class="product-price"><span class="price">¥3,300<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-title">
-          <h3>イソギンチャク</h3>
-          <span class="count">全5点</span>
-        </div>
-        <div class="product-grid">
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1712672117537-0ab4f26d1e7c?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">イソギンチャク</span>
-            </div>
-            <div class="product-body">
-              <h4>サンゴイソギンチャク</h4>
-              <div class="product-meta"><span>サイズ目安 約12cm</span><span>飼育難易度 中級</span></div>
-              <p class="product-comment">クマノミとの相性がよく、触手の先端が丸く膨らむ特徴的な個体です。強い光と安定した水質を好みます。</p>
-              <div class="product-price"><span class="price">¥9,900<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1738181133744-ab06901eaf1f?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">イソギンチャク</span>
-            </div>
-            <div class="product-body">
-              <h4>ハタゴイソギンチャク</h4>
-              <div class="product-meta"><span>サイズ目安 約15cm</span><span>飼育難易度 上級</span></div>
-              <p class="product-comment">足盤がしっかりと張り、移動が落ち着いている状態です。水槽内で身を隠せる岩組みを用意してあげてください。</p>
-              <div class="product-price"><span class="price">¥13,200<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1696406523157-946fd855c77e?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock ask">要相談</span>
-              <span class="badge badge-category">イソギンチャク</span>
-            </div>
-            <div class="product-body">
-              <h4>シライトイソギンチャク</h4>
-              <div class="product-meta"><span>サイズ目安 約14cm</span><span>飼育難易度 上級</span></div>
-              <p class="product-comment">触手が細くしなやかに広がる種類です。水槽の立ち上げ期間や照明機材について事前確認をお願いしています。</p>
-              <div class="product-price"><span class="price">¥14,300<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1644913054796-db03fc0e2d16?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock">入荷中</span>
-              <span class="badge badge-category">イソギンチャク</span>
-            </div>
-            <div class="product-body">
-              <h4>イボハタゴイソギンチャク</h4>
-              <div class="product-meta"><span>サイズ目安 約13cm</span><span>飼育難易度 中級</span></div>
-              <p class="product-comment">表面のイボ状の突起がはっきり確認できる健康な個体です。強い光量下で色付きが良くなる傾向があります。</p>
-              <div class="product-price"><span class="price">¥10,780<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-photo" style="background-image:url('https://images.unsplash.com/photo-1550457235-f45f6a6e05ce?fm=jpg&q=75&w=800&auto=format&fit=crop');">
-              <!-- 実際の個体写真に差し替え可能 -->
-              <span class="badge badge-stock low">残りわずか</span>
-              <span class="badge badge-category">イソギンチャク</span>
-            </div>
-            <div class="product-body">
-              <h4>センジュイソギンチャク</h4>
-              <div class="product-meta"><span>サイズ目安 約16cm</span><span>飼育難易度 上級</span></div>
-              <p class="product-comment">触手数が多く見応えのある大型個体です。広めの水槽と十分な水量を確保できる方向けにご案内しています。</p>
-              <div class="product-price"><span class="price">¥16,500<small> / 税込</small></span></div>
-            </div>
-          </article>
-
-        </div>
-      </div>
+      <div id="base-product-grid" class="base-product-grid"></div>
+      <p id="base-product-loading" class="product-loading-msg">商品情報を読み込み中です…</p>
+      <p id="base-product-empty" class="product-loading-msg" hidden>只今、商品情報を準備中です。しばらくしてから再度ご確認ください。</p>
 
       <div class="cta-row">
         <a href="#faq" class="btn btn-navy">購入前によくある質問を見る</a>
@@ -966,5 +719,89 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var grid = document.getElementById("base-product-grid");
+  var loadingMsg = document.getElementById("base-product-loading");
+  var emptyMsg = document.getElementById("base-product-empty");
+  if (!grid) return;
+
+  function formatPrice(price) {
+    return "¥" + Number(price).toLocaleString("ja-JP");
+  }
+
+  function createCard(product) {
+    var card = document.createElement("a");
+    card.className = "base-product-card";
+    card.href = product.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+    card.setAttribute("aria-label", product.title + " " + formatPrice(product.price));
+
+    var photo = document.createElement("div");
+    photo.className = "base-product-photo";
+    photo.style.backgroundImage = "url('" + product.image + "')";
+    card.appendChild(photo);
+
+    var overlay = document.createElement("div");
+    overlay.className = "base-product-overlay";
+
+    var title = document.createElement("p");
+    title.className = "base-product-title";
+    title.textContent = product.title;
+    overlay.appendChild(title);
+
+    var price = document.createElement("p");
+    price.className = "base-product-price";
+    price.innerHTML = formatPrice(product.price) + "<small> / 税込</small>";
+    overlay.appendChild(price);
+
+    card.appendChild(overlay);
+
+    // スマホ等タッチ操作の環境では、1回目のタップで価格情報を表示し、
+    // 2回目のタップ（同じカードを再度タップ）でBASEの商品ページへ遷移する。
+    card.addEventListener(
+      "touchstart",
+      function (e) {
+        if (!card.classList.contains("show-overlay")) {
+          e.preventDefault();
+          var shown = grid.querySelectorAll(".show-overlay");
+          for (var i = 0; i < shown.length; i++) {
+            if (shown[i] !== card) shown[i].classList.remove("show-overlay");
+          }
+          card.classList.add("show-overlay");
+        }
+      },
+      { passive: false }
+    );
+
+    return card;
+  }
+
+  fetch("./products.json", { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("products.json not available");
+      return res.json();
+    })
+    .then(function (data) {
+      var products = data.products || [];
+      loadingMsg.hidden = true;
+      if (products.length === 0) {
+        emptyMsg.hidden = false;
+        return;
+      }
+      products.forEach(function (product) {
+        grid.appendChild(createCard(product));
+      });
+    })
+    .catch(function () {
+      loadingMsg.hidden = true;
+      emptyMsg.hidden = false;
+    });
+})();
+</script>
 </body>
 </html>

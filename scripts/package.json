@@ -1,0 +1,11 @@
+{
+  "name": "base-products-sync",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch-products": "node fetch-products.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
