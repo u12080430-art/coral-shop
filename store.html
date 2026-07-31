@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>店舗のご案内｜〔ショップ名〕</title>
-<meta name="description" content="〔ショップ名〕の実店舗のご案内。所在地・営業時間・ご来店にあたっての注意事項をまとめています。">
+<title>店舗のご案内｜ASCORAL</title>
+<meta name="description" content="ASCORALの実店舗のご案内。所在地・営業時間・ご来店にあたっての注意事項をまとめています。">
 <style>
   :root{
     --navy:#0b3350;
@@ -124,6 +124,14 @@
     text-align:center;
     padding:20px;
   }
+  .map-embed{
+    aspect-ratio:16/9;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .map-embed iframe{width:100%;height:100%;border:0;display:block;}
 
   .two-col{display:grid;grid-template-columns:1fr;gap:24px;}
 
@@ -206,7 +214,7 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="logo">〔ショップ名〕</a>
+    <a href="index.html" class="logo">ASCORAL</a>
     <nav class="site-nav">
       <a href="index.html#reasons">選ばれる理由</a>
       <a href="index.html#products">入荷個体一覧</a>
@@ -234,13 +242,19 @@
         <span class="section-eyebrow">ACCESS</span>
         <h2>所在地・アクセス</h2>
       </div>
-      <div class="map-placeholder">〔地図プレースホルダー：Googleマップ等の埋め込み予定地〕</div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?ll=35.341717,139.275879&z=16&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="ASCORAL実店舗の地図"
+        ></iframe>
+      </div>
       <div class="info-table-wrap">
         <table class="info-table">
-          <tr><th>店舗名</th><td>〔ショップ名〕 実店舗</td></tr>
-          <tr><th>住所</th><td>〔郵便番号〕〔都道府県〕〔市区町村〕〔番地・建物名〕</td></tr>
-          <tr><th>最寄り駅</th><td>〔最寄り駅名〕から徒歩〔◯分〕</td></tr>
-          <tr><th>駐車場</th><td>〔駐車場の有無・台数・提携駐車場情報〕</td></tr>
+          <tr><th>店舗名</th><td>ASCORAL</td></tr>
+          <tr><th>住所</th><td>〔郵便番号〕神奈川県平塚市上吉沢1903　※アスベックス㈱敷地内</td></tr>
+          <tr><th>駐車場</th><td>有</td></tr>
           <tr><th>電話番号</th><td>〔電話番号〕</td></tr>
         </table>
       </div>
@@ -321,7 +335,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>〔ショップ名〕</h3>
+        <h3>ASCORAL</h3>
         <p>〔状態管理を徹底した、初心者にもやさしいサンゴ専門店〕として、生体サンゴをお届けしています。</p>
       </div>
       <div class="footer-links">
@@ -352,10 +366,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 〔ショップ名〕</span>
-      <span><a href="tokushoho.html">特定商取引法に基づく表記</a></span>
-      <span><a href="privacy.html">プライバシーポリシー</a></span>
-      <span><a href="index.html">トップページに戻る</a></span>
+      <span>&copy; 2026 ASCORAL</span>
     </div>
   </div>
 </footer>
