@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T15:58:51.285Z",
+  "updatedAt": "2026-08-02T16:00:12.143Z",
   "products": [
     {
       "id": 152358822,
@@ -306,28 +306,12 @@
       "listOrder": 39
     },
     {
-      "id": 151604058,
-      "title": "AW.01　オオタバレッド　S",
-      "price": 4400,
-      "image": "products/151604058.jpg",
-      "url": "https://ascoral.base.shop/items/151604058",
-      "listOrder": 41
-    },
-    {
       "id": 151604000,
       "title": "AW.01　ハナガタレッド ML",
       "price": 8800,
       "image": "products/151604000.jpg",
       "url": "https://ascoral.base.shop/items/151604000",
       "listOrder": 42
-    },
-    {
-      "id": 151603668,
-      "title": "AW.01　チヂミトサカ　M",
-      "price": 5500,
-      "image": "products/151603668.jpg",
-      "url": "https://ascoral.base.shop/items/151603668",
-      "listOrder": 43
     },
     {
       "id": 151603569,
@@ -400,14 +384,6 @@
       "image": "products/150550523.jpg",
       "url": "https://ascoral.base.shop/items/150550523",
       "listOrder": 53
-    },
-    {
-      "id": 150550376,
-      "title": "GONIO.01　ハナガササンゴピンク＆イエロー40㎜（Aグレード）",
-      "price": 27500,
-      "image": "products/150550376.jpg",
-      "url": "https://ascoral.base.shop/items/150550376",
-      "listOrder": 54
     },
     {
       "id": 150545049,
