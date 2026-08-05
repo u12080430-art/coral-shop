@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T16:50:42.914Z",
+  "updatedAt": "2026-08-05T16:31:42.583Z",
   "products": [
     {
       "id": 152358822,
@@ -154,14 +154,6 @@
       "listOrder": 20
     },
     {
-      "id": 152359102,
-      "title": "FU.01　カクオオトゲキクメイシ　Aグレード4",
-      "price": 5500,
-      "image": "products/152359102.jpg",
-      "url": "https://ascoral.base.shop/items/152359102",
-      "listOrder": 21
-    },
-    {
       "id": 152357273,
       "title": "FU.01　カクオオトゲキクメイシ　Aグレード3",
       "price": 5500,
@@ -171,7 +163,7 @@
     },
     {
       "id": 152357199,
-      "title": "FU.01　カクオオトゲキクメイシ　Aグレード2　大き目",
+      "title": "FU.01　カクオオトゲキクメイシ　Aグレード2　大きめ",
       "price": 13200,
       "image": "products/152357199.jpg",
       "url": "https://ascoral.base.shop/items/152357199",
@@ -179,7 +171,7 @@
     },
     {
       "id": 152357134,
-      "title": "FU.01　カクオオトゲキクメイシ　Aグレード1　大き目",
+      "title": "FU.01　カクオオトゲキクメイシ　Aグレード1　大きめ",
       "price": 13200,
       "image": "products/152357134.jpg",
       "url": "https://ascoral.base.shop/items/152357134",
@@ -704,22 +696,6 @@
       "image": "products/148441459.jpg",
       "url": "https://ascoral.base.shop/items/148441459",
       "listOrder": 101
-    },
-    {
-      "id": 148440978,
-      "title": "E.G33　コットンキャンディ　2ヘッド",
-      "price": 11000,
-      "image": "products/148440978.jpg",
-      "url": "https://ascoral.base.shop/items/148440978",
-      "listOrder": 102
-    },
-    {
-      "id": 148440659,
-      "title": "E.G7　ドラゴンソウルトーチコーラル　 1ヘッド",
-      "price": 19800,
-      "image": "products/148440659.jpg",
-      "url": "https://ascoral.base.shop/items/148440659",
-      "listOrder": 103
     },
     {
       "id": 148439021,
