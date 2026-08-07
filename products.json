@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-05T16:31:42.583Z",
+  "updatedAt": "2026-08-07T15:53:09.180Z",
   "products": [
     {
       "id": 152358822,
@@ -144,14 +144,6 @@
       "image": "products/152357368.jpg",
       "url": "https://ascoral.base.shop/items/152357368",
       "listOrder": 19
-    },
-    {
-      "id": 152357307,
-      "title": "FU.01　カクオオトゲキクメイシ　Aグレード5",
-      "price": 5500,
-      "image": "products/152357307.jpg",
-      "url": "https://ascoral.base.shop/items/152357307",
-      "listOrder": 20
     },
     {
       "id": 152357273,
@@ -400,14 +392,6 @@
       "image": "products/150220282.jpg",
       "url": "https://ascoral.base.shop/items/150220282",
       "listOrder": 57
-    },
-    {
-      "id": 150124263,
-      "title": "AC.04　クシハダミドリイシ　オレンジ1",
-      "price": 22000,
-      "image": "products/150124263.jpg",
-      "url": "https://ascoral.base.shop/items/150124263",
-      "listOrder": 58
     },
     {
       "id": 150124161,
