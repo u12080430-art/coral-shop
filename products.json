@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T15:56:43.422Z",
+  "updatedAt": "2026-08-11T15:57:40.925Z",
   "products": [
     {
       "id": 153803262,
@@ -896,14 +896,6 @@
       "image": "products/148398894.jpg",
       "url": "https://ascoral.base.shop/items/148398894",
       "listOrder": 137
-    },
-    {
-      "id": 148398640,
-      "title": "AC.04　スゲミドリイシ",
-      "price": 17600,
-      "image": "products/148398640.jpg",
-      "url": "https://ascoral.base.shop/items/148398640",
-      "listOrder": 138
     },
     {
       "id": 145375421,
