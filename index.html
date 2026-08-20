@@ -48,6 +48,8 @@
   }
   .section-head h2{font-size:1.5rem;color:var(--navy);}
   .section-head p{margin-top:12px;color:var(--text-soft);font-size:.95rem;}
+  .contact-direct-email{margin-top:8px;font-size:.85rem;color:var(--text-soft);}
+  .contact-direct-email a{color:var(--sea);text-decoration:underline;}
   .bg-mist{background:var(--mist);}
 
   /* Header */
@@ -615,9 +617,11 @@
         <span class="section-eyebrow">CONTACT</span>
         <h2>メールでのお問い合わせ</h2>
         <p>個体の状態やご購入前のご相談など、下記フォームよりお気軽にお問い合わせください。通常2営業日以内にご返信しております。</p>
+        <p class="contact-direct-email">メールソフトが起動しない場合は、<a href="mailto:ascoral@asbex.co.jp">ascoral@asbex.co.jp</a> へ直接お送りください。</p>
       </div>
-      <form class="contact-form" action="mailto:ascoral@asbex.co.jp" method="post" enctype="text/plain">
-        <!-- mailto送信のため、送信元端末に設定されたメールソフトが起動する形式です。
+      <form class="contact-form" id="contact-form">
+        <!-- 送信ボタン押下時にJSでmailtoリンクを組み立てて遷移する方式（フォームPOSTではないため、
+             ブラウザの「安全でないフォーム送信」警告が出ない）。送信元端末に設定されたメールソフトが起動します。
              Webメール（Gmail等）をブラウザのみで使っている環境では起動しない場合があるため、
              より確実に送信を受け付けたい場合はフォーム送信サービスへの差し替えを検討してください。 -->
         <p class="form-note"><span class="badge-required">必須</span>の項目は入力必須です。</p>
@@ -813,6 +817,50 @@
       loadingMsg.hidden = true;
       emptyMsg.hidden = false;
     });
+})();
+
+(function () {
+  "use strict";
+
+  var form = document.getElementById("contact-form");
+  if (!form) return;
+
+  var inquiryTypeLabels = {
+    product: "入荷個体について",
+    shipping: "配送・梱包について",
+    store: "実店舗について",
+    other: "その他のご相談"
+  };
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var name = form.elements["name"].value;
+    var kana = form.elements["kana"].value;
+    var email = form.elements["email"].value;
+    var tel = form.elements["tel"].value;
+    var inquiryType = inquiryTypeLabels[form.elements["inquiry_type"].value] || "";
+    var message = form.elements["message"].value;
+
+    var subject = "【ASCORAL】お問い合わせ（" + (inquiryType || "内容未選択") + "）";
+    var bodyLines = [
+      "お名前：" + name,
+      "フリガナ：" + kana,
+      "メールアドレス：" + email,
+      "電話番号：" + tel,
+      "お問い合わせ種別：" + inquiryType,
+      "",
+      "お問い合わせ内容：",
+      message
+    ];
+
+    var mailtoUrl =
+      "mailto:ascoral@asbex.co.jp" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(bodyLines.join("\n"));
+
+    window.location.href = mailtoUrl;
+  });
 })();
 </script>
 </body>
