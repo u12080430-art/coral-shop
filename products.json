@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T15:15:43.393Z",
+  "updatedAt": "2026-08-23T15:16:09.503Z",
   "products": [
     {
       "id": 154351764,
@@ -16,14 +16,6 @@
       "image": "products/153803262.jpg",
       "url": "https://ascoral.base.shop/items/153803262",
       "listOrder": 2
-    },
-    {
-      "id": 153803222,
-      "title": "AW.02　ナガレハナサンゴ メタオレンジ",
-      "price": 6600,
-      "image": "products/153803222.jpg",
-      "url": "https://ascoral.base.shop/items/153803222",
-      "listOrder": 3
     },
     {
       "id": 153803205,
