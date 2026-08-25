@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T15:35:37.758Z",
+  "updatedAt": "2026-08-25T15:40:20.810Z",
   "products": [
     {
       "id": 155271564,
@@ -571,7 +571,7 @@
     },
     {
       "id": 149204460,
-      "title": "RT.06 AUS　スパスラータパープル　",
+      "title": "RT.06 AUS　スパスラータ　パープル　",
       "price": 29700,
       "image": "products/149204460.jpg",
       "url": "https://ascoral.base.shop/items/149204460",
@@ -736,14 +736,6 @@
       "image": "products/148439021.jpg",
       "url": "https://ascoral.base.shop/items/148439021",
       "listOrder": 114
-    },
-    {
-      "id": 148402079,
-      "title": "AC.03　ウスエダミドリイシ 1",
-      "price": 14300,
-      "image": "products/148402079.jpg",
-      "url": "https://ascoral.base.shop/items/148402079",
-      "listOrder": 115
     },
     {
       "id": 148402298,
