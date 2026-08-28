@@ -437,12 +437,8 @@
         <h2>入荷速報・新着情報</h2>
         <p>個体は随時入荷しています。売り切れの場合は次回入荷の目安をお問い合わせください。</p>
       </div>
-      <div class="news-list">
-        <div class="news-item"><span class="news-date">2026.07.18</span><div><span class="news-tag">入荷</span>ハードコーラル・イソギンチャク計8点を追加しました。</div></div>
-        <div class="news-item"><span class="news-date">2026.07.11</span><div><span class="news-tag">お知らせ</span>夏季の高温期に伴い、保冷剤入り梱包の対応地域を拡大しました。</div></div>
-        <div class="news-item"><span class="news-date">2026.07.04</span><div><span class="news-tag">入荷</span>ソフトコーラルの新着個体を掲載しました。人気種は早期に品切れとなる場合があります。</div></div>
-        <div class="news-item"><span class="news-date">2026.06.27</span><div><span class="news-tag">お知らせ</span>公式LINEでの入荷連絡サービスを開始しました。ご希望の方はフッターよりご登録ください。</div></div>
-      </div>
+      <div id="base-news-list" class="news-list"></div>
+      <p id="base-news-empty" class="product-loading-msg" hidden>新着情報はまだありません。</p>
       <div class="cta-row">
         <a href="#products" class="btn btn-primary">最新の入荷個体を見る</a>
       </div>
@@ -861,6 +857,53 @@
 
     window.location.href = mailtoUrl;
   });
+})();
+
+(function () {
+  "use strict";
+
+  var list = document.getElementById("base-news-list");
+  var emptyMsg = document.getElementById("base-news-empty");
+  if (!list) return;
+
+  function createNewsItem(entry) {
+    var item = document.createElement("div");
+    item.className = "news-item";
+
+    var date = document.createElement("span");
+    date.className = "news-date";
+    date.textContent = entry.date;
+    item.appendChild(date);
+
+    var body = document.createElement("div");
+    var tag = document.createElement("span");
+    tag.className = "news-tag";
+    tag.textContent = entry.tag;
+    body.appendChild(tag);
+    body.appendChild(document.createTextNode(entry.text));
+    item.appendChild(body);
+
+    return item;
+  }
+
+  fetch("./news.json", { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("news.json not available");
+      return res.json();
+    })
+    .then(function (data) {
+      var items = data.items || [];
+      if (items.length === 0) {
+        emptyMsg.hidden = false;
+        return;
+      }
+      items.forEach(function (entry) {
+        list.appendChild(createNewsItem(entry));
+      });
+    })
+    .catch(function () {
+      emptyMsg.hidden = false;
+    });
 })();
 </script>
 </body>
