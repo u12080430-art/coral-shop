@@ -11,6 +11,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
 const PRODUCTS_JSON_PATH = path.join(REPO_ROOT, "products.json");
 const PRODUCTS_IMG_DIR = path.join(REPO_ROOT, "products");
+const NEWS_JSON_PATH = path.join(REPO_ROOT, "news.json");
+const NEWS_MAX_ITEMS = 10;
 // BASEのrefresh_tokenは使用のたびに新しいものへローテーションすることを実機確認済み。
 // 新しいrefresh_tokenが発行された場合はこのファイルに書き出し、GitHub Actions側で
 // gh secret set を使ってBASE_REFRESH_TOKENへ自動的に書き戻す。
@@ -99,6 +101,57 @@ function primaryImageUrl(item) {
   return null;
 }
 
+function todayJST() {
+  const jst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const y = jst.getUTCFullYear();
+  const m = String(jst.getUTCMonth() + 1).padStart(2, "0");
+  const d = String(jst.getUTCDate()).padStart(2, "0");
+  return `${y}.${m}.${d}`;
+}
+
+async function readPreviousProductIds() {
+  try {
+    const raw = await fs.readFile(PRODUCTS_JSON_PATH, "utf-8");
+    const data = JSON.parse(raw);
+    if (!Array.isArray(data.products)) return null;
+    return new Set(data.products.map((p) => p.id));
+  } catch {
+    // 初回実行時など、既存のproducts.jsonが無い/壊れている場合は
+    // 比較対象なしとして扱い、このタイミングでは新着お知らせを作らない。
+    return null;
+  }
+}
+
+async function updateNewsIfNewArrivals(previousIds, currentProducts) {
+  if (!previousIds) return; // 初回実行時は比較しない（全件が「新着」扱いになるのを防ぐ）
+
+  const addedCount = currentProducts.filter((p) => !previousIds.has(p.id)).length;
+  if (addedCount === 0) return;
+
+  let items = [];
+  try {
+    const raw = await fs.readFile(NEWS_JSON_PATH, "utf-8");
+    const data = JSON.parse(raw);
+    if (Array.isArray(data.items)) items = data.items;
+  } catch {
+    // news.jsonが無ければ新規作成する。
+  }
+
+  items.unshift({
+    date: todayJST(),
+    tag: "入荷",
+    text: `新着個体を${addedCount}点追加しました。`,
+  });
+  items = items.slice(0, NEWS_MAX_ITEMS);
+
+  await fs.writeFile(
+    NEWS_JSON_PATH,
+    JSON.stringify({ updatedAt: new Date().toISOString(), items }, null, 2),
+    "utf-8"
+  );
+  console.log(`news.json を更新しました（新着${addedCount}点）。`);
+}
+
 async function downloadAndCropSquare(imageUrl, destPath) {
   const res = await fetch(imageUrl);
   if (!res.ok) throw new Error(`画像のダウンロードに失敗しました (HTTP ${res.status}): ${imageUrl}`);
@@ -113,6 +166,7 @@ async function downloadAndCropSquare(imageUrl, destPath) {
 async function main() {
   console.log("BASE商品データの取得を開始します。");
 
+  const previousIds = await readPreviousProductIds();
   const accessToken = await fetchAccessToken();
   const rawItems = await fetchAllItems(accessToken);
   console.log(`BASEから${rawItems.length}件の商品を取得しました。`);
@@ -161,6 +215,8 @@ async function main() {
   );
 
   console.log(`products.json を書き出しました（掲載商品数: ${products.length}件）。`);
+
+  await updateNewsIfNewArrivals(previousIds, products);
 }
 
 main().catch((err) => {
