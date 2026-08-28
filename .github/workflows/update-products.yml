@@ -52,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add products.json products/
+          git add products.json products/ news.json
           git diff --cached --quiet || git commit -m "chore: update BASE products data"
           git push
