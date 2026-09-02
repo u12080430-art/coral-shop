@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T20:37:47.830Z",
+  "updatedAt": "2026-09-02T18:23:28.819Z",
   "products": [
     {
       "id": 155684197,
@@ -816,14 +816,6 @@
       "image": "products/148401278.jpg",
       "url": "https://ascoral.base.shop/items/148401278",
       "listOrder": 130
-    },
-    {
-      "id": 148400668,
-      "title": "AC.01　クシハダミドリイシ 2",
-      "price": 12100,
-      "image": "products/148400668.jpg",
-      "url": "https://ascoral.base.shop/items/148400668",
-      "listOrder": 132
     },
     {
       "id": 148400752,
