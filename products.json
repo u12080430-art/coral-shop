@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02T18:23:28.819Z",
+  "updatedAt": "2026-09-03T18:19:40.476Z",
   "products": [
     {
       "id": 155684197,
@@ -200,14 +200,6 @@
       "image": "products/152358255.jpg",
       "url": "https://ascoral.base.shop/items/152358255",
       "listOrder": 29
-    },
-    {
-      "id": 152357620,
-      "title": "FU.01　カクオオトゲキクメイシ　Aグレード10",
-      "price": 5500,
-      "image": "products/152357620.jpg",
-      "url": "https://ascoral.base.shop/items/152357620",
-      "listOrder": 30
     },
     {
       "id": 152357528,
