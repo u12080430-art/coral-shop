@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T17:39:43.080Z",
+  "updatedAt": "2026-09-13T17:53:34.883Z",
   "products": [
     {
       "id": 156595046,
@@ -296,14 +296,6 @@
       "image": "products/152357199.jpg",
       "url": "https://ascoral.base.shop/items/152357199",
       "listOrder": 45
-    },
-    {
-      "id": 152357134,
-      "title": "FU.01　カクオオトゲキクメイシ　Aグレード1　大きめ",
-      "price": 13200,
-      "image": "products/152357134.jpg",
-      "url": "https://ascoral.base.shop/items/152357134",
-      "listOrder": 46
     },
     {
       "id": 152357103,
@@ -738,14 +730,6 @@
       "listOrder": 118
     },
     {
-      "id": 148441401,
-      "title": "E.G2　24Kゴールドトーチ 2ヘッド　4",
-      "price": 15180,
-      "image": "products/148441401.jpg",
-      "url": "https://ascoral.base.shop/items/148441401",
-      "listOrder": 120
-    },
-    {
       "id": 148441343,
       "title": "E.G2　24Kゴールドトーチ 2ヘッド　6",
       "price": 15180,
@@ -816,14 +800,6 @@
       "image": "products/148401614.jpg",
       "url": "https://ascoral.base.shop/items/148401614",
       "listOrder": 135
-    },
-    {
-      "id": 148401461,
-      "title": "AC.01　クシハダミドリイシ 11",
-      "price": 7260,
-      "image": "products/148401461.jpg",
-      "url": "https://ascoral.base.shop/items/148401461",
-      "listOrder": 136
     },
     {
       "id": 148401278,
