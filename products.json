@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T17:53:34.883Z",
+  "updatedAt": "2026-09-14T19:45:34.014Z",
   "products": [
     {
       "id": 156595046,
@@ -776,14 +776,6 @@
       "image": "products/148402582.jpg",
       "url": "https://ascoral.base.shop/items/148402582",
       "listOrder": 130
-    },
-    {
-      "id": 148402655,
-      "title": "AC.03　ウスエダミドリイシ 6",
-      "price": 8580,
-      "image": "products/148402655.jpg",
-      "url": "https://ascoral.base.shop/items/148402655",
-      "listOrder": 131
     },
     {
       "id": 148402699,
