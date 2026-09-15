@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T19:45:34.014Z",
+  "updatedAt": "2026-09-15T18:44:26.426Z",
   "products": [
     {
       "id": 156595046,
@@ -7,7 +7,7 @@
       "price": 5500,
       "image": "products/156595046.jpg",
       "url": "https://ascoral.base.shop/items/156595046",
-      "listOrder": 1
+      "listOrder": 2
     },
     {
       "id": 156589608,
@@ -15,7 +15,7 @@
       "price": 3300,
       "image": "products/156589608.jpg",
       "url": "https://ascoral.base.shop/items/156589608",
-      "listOrder": 2
+      "listOrder": 3
     },
     {
       "id": 156589575,
@@ -23,7 +23,7 @@
       "price": 2420,
       "image": "products/156589575.jpg",
       "url": "https://ascoral.base.shop/items/156589575",
-      "listOrder": 3
+      "listOrder": 4
     },
     {
       "id": 156589540,
@@ -31,7 +31,7 @@
       "price": 2420,
       "image": "products/156589540.jpg",
       "url": "https://ascoral.base.shop/items/156589540",
-      "listOrder": 4
+      "listOrder": 5
     },
     {
       "id": 156589514,
@@ -39,7 +39,7 @@
       "price": 2420,
       "image": "products/156589514.jpg",
       "url": "https://ascoral.base.shop/items/156589514",
-      "listOrder": 5
+      "listOrder": 6
     },
     {
       "id": 156589341,
@@ -416,14 +416,6 @@
       "image": "products/151603569.jpg",
       "url": "https://ascoral.base.shop/items/151603569",
       "listOrder": 66
-    },
-    {
-      "id": 151603483,
-      "title": "AW.01　スターポリプグリーン（トサカ付）　MS",
-      "price": 3300,
-      "image": "products/151603483.jpg",
-      "url": "https://ascoral.base.shop/items/151603483",
-      "listOrder": 67
     },
     {
       "id": 151602844,
