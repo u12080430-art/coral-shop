@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T18:00:45.574Z",
+  "updatedAt": "2026-09-19T17:43:57.672Z",
   "products": [
     {
       "id": 157692231,
@@ -24,14 +24,6 @@
       "image": "products/157691670.jpg",
       "url": "https://ascoral.base.shop/items/157691670",
       "listOrder": 3
-    },
-    {
-      "id": 157691486,
-      "title": "AW.03　へアリーディスクグリーン2枚　1",
-      "price": 2200,
-      "image": "products/157691486.jpg",
-      "url": "https://ascoral.base.shop/items/157691486",
-      "listOrder": 4
     },
     {
       "id": 157691083,
@@ -512,14 +504,6 @@
       "image": "products/150550622.jpg",
       "url": "https://ascoral.base.shop/items/150550622",
       "listOrder": 79
-    },
-    {
-      "id": 150550523,
-      "title": "GONIO.01　ハナガササンゴグリーンフラグ40㎜(Aグレード)",
-      "price": 7920,
-      "image": "products/150550523.jpg",
-      "url": "https://ascoral.base.shop/items/150550523",
-      "listOrder": 80
     },
     {
       "id": 150220282,
