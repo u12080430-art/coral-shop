@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T19:53:34.035Z",
+  "updatedAt": "2026-09-22T18:30:12.939Z",
   "products": [
     {
       "id": 157692231,
@@ -144,14 +144,6 @@
       "image": "products/155255471.jpg",
       "url": "https://ascoral.base.shop/items/155255471",
       "listOrder": 20
-    },
-    {
-      "id": 154351764,
-      "title": "AS.01 お任せSPSフラグ3個セット",
-      "price": 7700,
-      "image": "products/154351764.jpg",
-      "url": "https://ascoral.base.shop/items/154351764",
-      "listOrder": 21
     },
     {
       "id": 153803262,
@@ -426,14 +418,6 @@
       "listOrder": 64
     },
     {
-      "id": 151778528,
-      "title": "AC.01　クシハダミドリイシ 5",
-      "price": 7260,
-      "image": "products/151778528.jpg",
-      "url": "https://ascoral.base.shop/items/151778528",
-      "listOrder": 65
-    },
-    {
       "id": 151604000,
       "title": "AW.01　ハナガタレッド ML",
       "price": 8800,
@@ -552,14 +536,6 @@
       "image": "products/149307796.jpg",
       "url": "https://ascoral.base.shop/items/149307796",
       "listOrder": 91
-    },
-    {
-      "id": 149307675,
-      "title": "GONIO.01　ハナガササンゴピンク＆グリーン（Aグレード）",
-      "price": 39600,
-      "image": "products/149307675.jpg",
-      "url": "https://ascoral.base.shop/items/149307675",
-      "listOrder": 92
     },
     {
       "id": 149307521,
