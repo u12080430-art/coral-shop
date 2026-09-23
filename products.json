@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T18:30:12.939Z",
+  "updatedAt": "2026-09-23T18:49:48.373Z",
   "products": [
     {
       "id": 157692231,
@@ -594,14 +594,6 @@
       "listOrder": 101
     },
     {
-      "id": 149205300,
-      "title": "AC.04　ミドリイシSP グリーンフラグ",
-      "price": 3300,
-      "image": "products/149205300.jpg",
-      "url": "https://ascoral.base.shop/items/149205300",
-      "listOrder": 103
-    },
-    {
       "id": 149204960,
       "title": "RT.08 AUS　ミドリイシSP　グリーン5",
       "price": 11550,
@@ -856,14 +848,6 @@
       "image": "products/148399260.jpg",
       "url": "https://ascoral.base.shop/items/148399260",
       "listOrder": 153
-    },
-    {
-      "id": 148398750,
-      "title": "AC.04　ツツハナガサミドリイシ 1",
-      "price": 13200,
-      "image": "products/148398750.jpg",
-      "url": "https://ascoral.base.shop/items/148398750",
-      "listOrder": 156
     },
     {
       "id": 148398894,
