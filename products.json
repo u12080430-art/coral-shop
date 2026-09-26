@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T19:07:14.092Z",
+  "updatedAt": "2026-09-26T18:15:48.200Z",
   "products": [
     {
       "id": 157692231,
@@ -610,14 +610,6 @@
       "listOrder": 105
     },
     {
-      "id": 149204460,
-      "title": "RT.06 AUS　スパスラータ　パープル　",
-      "price": 17820,
-      "image": "products/149204460.jpg",
-      "url": "https://ascoral.base.shop/items/149204460",
-      "listOrder": 106
-    },
-    {
       "id": 149203234,
       "title": "RT.05  AUS　ミドリイシSPグリーン3",
       "price": 11550,
@@ -698,14 +690,6 @@
       "listOrder": 120
     },
     {
-      "id": 148549723,
-      "title": "AC.03　ウスエダミドリイシ 8",
-      "price": 8580,
-      "image": "products/148549723.jpg",
-      "url": "https://ascoral.base.shop/items/148549723",
-      "listOrder": 121
-    },
-    {
       "id": 148441097,
       "title": "E.G1　24Kゴールドトーチ 1ヘッド 　1",
       "price": 11880,
@@ -736,14 +720,6 @@
       "image": "products/148441459.jpg",
       "url": "https://ascoral.base.shop/items/148441459",
       "listOrder": 128
-    },
-    {
-      "id": 148439021,
-      "title": "E.G23　グリーントーチ　1ヘッド　1",
-      "price": 4950,
-      "image": "products/148439021.jpg",
-      "url": "https://ascoral.base.shop/items/148439021",
-      "listOrder": 131
     },
     {
       "id": 148402443,
@@ -784,14 +760,6 @@
       "image": "products/148401278.jpg",
       "url": "https://ascoral.base.shop/items/148401278",
       "listOrder": 142
-    },
-    {
-      "id": 148400752,
-      "title": "AC.01　クシハダミドリイシ 3",
-      "price": 7260,
-      "image": "products/148400752.jpg",
-      "url": "https://ascoral.base.shop/items/148400752",
-      "listOrder": 145
     },
     {
       "id": 148400789,
