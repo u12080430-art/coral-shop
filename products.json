@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T18:32:57.264Z",
+  "updatedAt": "2026-10-05T21:49:48.172Z",
   "products": [
     {
       "id": 157692231,
@@ -328,14 +328,6 @@
       "image": "products/152357071.jpg",
       "url": "https://ascoral.base.shop/items/152357071",
       "listOrder": 53
-    },
-    {
-      "id": 152357032,
-      "title": "FU.01　JawBreker3 2Color",
-      "price": 27500,
-      "image": "products/152357032.jpg",
-      "url": "https://ascoral.base.shop/items/152357032",
-      "listOrder": 54
     },
     {
       "id": 152356987,
