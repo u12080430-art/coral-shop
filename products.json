@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T21:49:48.172Z",
+  "updatedAt": "2026-10-06T19:58:56.067Z",
   "products": [
     {
       "id": 157692231,
@@ -448,14 +448,6 @@
       "image": "products/150843871.jpg",
       "url": "https://ascoral.base.shop/items/150843871",
       "listOrder": 76
-    },
-    {
-      "id": 150573250,
-      "title": "RTF.01 AUS　ミドリイシspフラグ30㎜",
-      "price": 3300,
-      "image": "products/150573250.jpg",
-      "url": "https://ascoral.base.shop/items/150573250",
-      "listOrder": 77
     },
     {
       "id": 150573128,
