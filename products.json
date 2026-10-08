@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T20:26:04.333Z",
+  "updatedAt": "2026-10-08T20:29:55.711Z",
   "products": [
     {
       "id": 157692231,
@@ -474,14 +474,6 @@
       "listOrder": 84
     },
     {
-      "id": 150124161,
-      "title": "AC.04　クシハダミドリイシ　ピンク2",
-      "price": 13200,
-      "image": "products/150124161.jpg",
-      "url": "https://ascoral.base.shop/items/150124161",
-      "listOrder": 86
-    },
-    {
       "id": 150124054,
       "title": "AC.04　クシハダミドリイシ　ピンク3",
       "price": 13200,
@@ -626,14 +618,6 @@
       "listOrder": 116
     },
     {
-      "id": 148553327,
-      "title": "FAC.02　スギノキミドリイシ 2",
-      "price": 5280,
-      "image": "products/148553327.jpg",
-      "url": "https://ascoral.base.shop/items/148553327",
-      "listOrder": 117
-    },
-    {
       "id": 148550647,
       "title": "AC.01　クシハダミドリイシ 14",
       "price": 7260,
@@ -720,14 +704,6 @@
       "image": "products/148400789.jpg",
       "url": "https://ascoral.base.shop/items/148400789",
       "listOrder": 146
-    },
-    {
-      "id": 148401037,
-      "title": "AC.01　クシハダミドリイシ 6",
-      "price": 7260,
-      "image": "products/148401037.jpg",
-      "url": "https://ascoral.base.shop/items/148401037",
-      "listOrder": 147
     },
     {
       "id": 148401105,
