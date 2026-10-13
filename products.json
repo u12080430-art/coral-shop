@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T22:23:21.500Z",
+  "updatedAt": "2026-10-13T20:31:36.608Z",
   "products": [
     {
       "id": 157692231,
@@ -394,14 +394,6 @@
       "listOrder": 63
     },
     {
-      "id": 151779408,
-      "title": "AC.03　ウスエダミドリイシ 2",
-      "price": 8580,
-      "image": "products/151779408.jpg",
-      "url": "https://ascoral.base.shop/items/151779408",
-      "listOrder": 64
-    },
-    {
       "id": 151604000,
       "title": "AW.01　ハナガタレッド ML",
       "price": 8800,
@@ -480,14 +472,6 @@
       "image": "products/149308069.jpg",
       "url": "https://ascoral.base.shop/items/149308069",
       "listOrder": 89
-    },
-    {
-      "id": 149307941,
-      "title": "GONIO.01　ハナガササンゴショッキングピンク（Aグレード）",
-      "price": 39600,
-      "image": "products/149307941.jpg",
-      "url": "https://ascoral.base.shop/items/149307941",
-      "listOrder": 90
     },
     {
       "id": 149307796,
