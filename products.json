@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T17:45:30.888Z",
+  "updatedAt": "2026-10-19T20:22:08.430Z",
   "products": [
     {
       "id": 163093225,
@@ -498,14 +498,6 @@
       "listOrder": 76
     },
     {
-      "id": 151779934,
-      "title": "RT.05 AUS　ミドリイシSPグリーン4",
-      "price": 11550,
-      "image": "products/151779934.jpg",
-      "url": "https://ascoral.base.shop/items/151779934",
-      "listOrder": 78
-    },
-    {
       "id": 151604000,
       "title": "AW.01　ハナガタレッド ML",
       "price": 8800,
@@ -674,14 +666,6 @@
       "listOrder": 122
     },
     {
-      "id": 149202918,
-      "title": "RT.04  AUS　ミドリイシSPフラグ",
-      "price": 5610,
-      "image": "products/149202918.jpg",
-      "url": "https://ascoral.base.shop/items/149202918",
-      "listOrder": 123
-    },
-    {
       "id": 149201224,
       "title": "RT.02 AUS　ミドリイシSP.　グリーン",
       "price": 11550,
@@ -754,14 +738,6 @@
       "listOrder": 143
     },
     {
-      "id": 148402699,
-      "title": "AC.03　ウスエダミドリイシ 7",
-      "price": 8580,
-      "image": "products/148402699.jpg",
-      "url": "https://ascoral.base.shop/items/148402699",
-      "listOrder": 152
-    },
-    {
       "id": 148401614,
       "title": "AC.01　クシハダミドリイシ 12",
       "price": 7260,
@@ -776,14 +752,6 @@
       "image": "products/148401278.jpg",
       "url": "https://ascoral.base.shop/items/148401278",
       "listOrder": 157
-    },
-    {
-      "id": 148401151,
-      "title": "AC.01　クシハダミドリイシ 8",
-      "price": 7260,
-      "image": "products/148401151.jpg",
-      "url": "https://ascoral.base.shop/items/148401151",
-      "listOrder": 164
     },
     {
       "id": 148401183,
