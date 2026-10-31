@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T19:51:37.419Z",
+  "updatedAt": "2026-10-31T19:03:13.143Z",
   "products": [
     {
       "id": 164543771,
@@ -224,14 +224,6 @@
       "image": "products/163690896.jpg",
       "url": "https://ascoral.base.shop/items/163690896",
       "listOrder": 30
-    },
-    {
-      "id": 163666304,
-      "title": "IND.01 コモンサンゴSP",
-      "price": 9900,
-      "image": "products/163666304.jpg",
-      "url": "https://ascoral.base.shop/items/163666304",
-      "listOrder": 33
     },
     {
       "id": 163093225,
@@ -850,14 +842,6 @@
       "listOrder": 149
     },
     {
-      "id": 149204703,
-      "title": "RT.07 AUS　ミドリイシSP",
-      "price": 11550,
-      "image": "products/149204703.jpg",
-      "url": "https://ascoral.base.shop/items/149204703",
-      "listOrder": 153
-    },
-    {
       "id": 149203234,
       "title": "RT.05  AUS　ミドリイシSPグリーン3",
       "price": 11550,
@@ -896,14 +880,6 @@
       "image": "products/148441097.jpg",
       "url": "https://ascoral.base.shop/items/148441097",
       "listOrder": 170
-    },
-    {
-      "id": 148443312,
-      "title": "E.G1　24Kゴールドトーチ 1ヘッド　2",
-      "price": 11880,
-      "image": "products/148443312.jpg",
-      "url": "https://ascoral.base.shop/items/148443312",
-      "listOrder": 171
     },
     {
       "id": 148441343,
