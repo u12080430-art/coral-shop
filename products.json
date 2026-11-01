@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T19:03:13.143Z",
+  "updatedAt": "2026-11-01T19:20:31.177Z",
   "products": [
     {
       "id": 164543771,
@@ -880,22 +880,6 @@
       "image": "products/148441097.jpg",
       "url": "https://ascoral.base.shop/items/148441097",
       "listOrder": 170
-    },
-    {
-      "id": 148441343,
-      "title": "E.G2　24Kゴールドトーチ 2ヘッド　6",
-      "price": 15180,
-      "image": "products/148441343.jpg",
-      "url": "https://ascoral.base.shop/items/148441343",
-      "listOrder": 175
-    },
-    {
-      "id": 148441459,
-      "title": "E.G3　24Kゴールドトーチ 3ヘッド　7",
-      "price": 19800,
-      "image": "products/148441459.jpg",
-      "url": "https://ascoral.base.shop/items/148441459",
-      "listOrder": 176
     },
     {
       "id": 148401614,
