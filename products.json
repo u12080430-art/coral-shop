@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T21:21:02.779Z",
+  "updatedAt": "2026-11-06T20:43:05.152Z",
   "products": [
     {
       "id": 165145040,
@@ -786,14 +786,6 @@
       "listOrder": 134
     },
     {
-      "id": 150220282,
-      "title": "AC.04　ウスエダミドリイシ",
-      "price": 11880,
-      "image": "products/150220282.jpg",
-      "url": "https://ascoral.base.shop/items/150220282",
-      "listOrder": 139
-    },
-    {
       "id": 149308069,
       "title": "GONIO.01　ハナガササンゴイエロー＆ピンクグラフテッドカラー（Aグレード）",
       "price": 39600,
@@ -882,36 +874,12 @@
       "listOrder": 166
     },
     {
-      "id": 148550647,
-      "title": "AC.01　クシハダミドリイシ 14",
-      "price": 7260,
-      "image": "products/148550647.jpg",
-      "url": "https://ascoral.base.shop/items/148550647",
-      "listOrder": 174
-    },
-    {
       "id": 148441097,
       "title": "E.G1　24Kゴールドトーチ 1ヘッド 　1",
       "price": 11880,
       "image": "products/148441097.jpg",
       "url": "https://ascoral.base.shop/items/148441097",
       "listOrder": 177
-    },
-    {
-      "id": 148401614,
-      "title": "AC.01　クシハダミドリイシ 12",
-      "price": 7260,
-      "image": "products/148401614.jpg",
-      "url": "https://ascoral.base.shop/items/148401614",
-      "listOrder": 195
-    },
-    {
-      "id": 148401278,
-      "title": "AC.01　クシハダミドリイシ 10",
-      "price": 7260,
-      "image": "products/148401278.jpg",
-      "url": "https://ascoral.base.shop/items/148401278",
-      "listOrder": 197
     },
     {
       "id": 148399260,
